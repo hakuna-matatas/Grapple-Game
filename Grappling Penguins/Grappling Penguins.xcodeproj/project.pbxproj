@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E729C0021D35889600F01D59 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E729C0011D35889600F01D59 /* PhysicsCategory.swift */; };
+		E729C0041D35A0B400F01D59 /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E729C0031D35A0B400F01D59 /* Ground.swift */; };
+		E7B040A71D25E2A2008B74D0 /* Three.png in Resources */ = {isa = PBXBuildFile; fileRef = E7B040A41D25E2A2008B74D0 /* Three.png */; };
+		E7B040A81D25E2A2008B74D0 /* Two.png in Resources */ = {isa = PBXBuildFile; fileRef = E7B040A51D25E2A2008B74D0 /* Two.png */; };
+		E7B040A91D25E2A2008B74D0 /* Six.png in Resources */ = {isa = PBXBuildFile; fileRef = E7B040A61D25E2A2008B74D0 /* Six.png */; };
+		E7B040AC1D25E2A9008B74D0 /* Four.png in Resources */ = {isa = PBXBuildFile; fileRef = E7B040AA1D25E2A9008B74D0 /* Four.png */; };
+		E7B040AD1D25E2A9008B74D0 /* Five.png in Resources */ = {isa = PBXBuildFile; fileRef = E7B040AB1D25E2A9008B74D0 /* Five.png */; };
+		E7C324D61D3407C5007B31E4 /* GrapplingHook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C324D51D3407C5007B31E4 /* GrapplingHook.swift */; };
+		E7D42AD81D258242006C85B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D42AD71D258242006C85B0 /* AppDelegate.swift */; };
+		E7D42ADA1D258242006C85B0 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E7D42AD91D258242006C85B0 /* GameScene.sks */; };
+		E7D42ADC1D258242006C85B0 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D42ADB1D258242006C85B0 /* GameScene.swift */; };
+		E7D42ADE1D258242006C85B0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D42ADD1D258242006C85B0 /* GameViewController.swift */; };
+		E7D42AE11D258242006C85B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D42ADF1D258242006C85B0 /* Main.storyboard */; };
+		E7D42AE31D258242006C85B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7D42AE21D258242006C85B0 /* Assets.xcassets */; };
+		E7D42AE61D258242006C85B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D42AE41D258242006C85B0 /* LaunchScreen.storyboard */; };
+		E7D42AF11D258242006C85B0 /* Grappling_PenguinsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D42AF01D258242006C85B0 /* Grappling_PenguinsTests.swift */; };
+		E7D42AFC1D258242006C85B0 /* Grappling_PenguinsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D42AFB1D258242006C85B0 /* Grappling_PenguinsUITests.swift */; };
+		E7D42B0A1D259C74006C85B0 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D42B091D259C74006C85B0 /* bg.png */; };
+		E7D42B0E1D259E57006C85B0 /* Prototype Ground.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D42B0D1D259E57006C85B0 /* Prototype Ground.png */; };
+		E7D42B141D25C12E006C85B0 /* Hook Gun.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D42B131D25C12E006C85B0 /* Hook Gun.png */; };
+		E7D42B181D25C208006C85B0 /* PenguinActions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E7D42B171D25C208006C85B0 /* PenguinActions.sks */; };
+		E7D9808E1D27192B004B953B /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D9808D1D27192B004B953B /* Hero.swift */; };
+		E7D980911D272546004B953B /* Grappling Line.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D980901D272546004B953B /* Grappling Line.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E7D42AED1D258242006C85B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7D42ACC1D258242006C85B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7D42AD31D258242006C85B0;
+			remoteInfo = "Grappling Penguins";
+		};
+		E7D42AF81D258242006C85B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E7D42ACC1D258242006C85B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E7D42AD31D258242006C85B0;
+			remoteInfo = "Grappling Penguins";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E729C0011D35889600F01D59 /* PhysicsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
+		E729C0031D35A0B400F01D59 /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
+		E7B040A41D25E2A2008B74D0 /* Three.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Three.png; sourceTree = "<group>"; };
+		E7B040A51D25E2A2008B74D0 /* Two.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Two.png; sourceTree = "<group>"; };
+		E7B040A61D25E2A2008B74D0 /* Six.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Six.png; sourceTree = "<group>"; };
+		E7B040AA1D25E2A9008B74D0 /* Four.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Four.png; sourceTree = "<group>"; };
+		E7B040AB1D25E2A9008B74D0 /* Five.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Five.png; sourceTree = "<group>"; };
+		E7C324D51D3407C5007B31E4 /* GrapplingHook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrapplingHook.swift; sourceTree = "<group>"; };
+		E7D42AD41D258242006C85B0 /* Grappling Penguins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grappling Penguins.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7D42AD71D258242006C85B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E7D42AD91D258242006C85B0 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		E7D42ADB1D258242006C85B0 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		E7D42ADD1D258242006C85B0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		E7D42AE01D258242006C85B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E7D42AE21D258242006C85B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E7D42AE51D258242006C85B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E7D42AE71D258242006C85B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7D42AEC1D258242006C85B0 /* Grappling PenguinsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Grappling PenguinsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7D42AF01D258242006C85B0 /* Grappling_PenguinsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grappling_PenguinsTests.swift; sourceTree = "<group>"; };
+		E7D42AF21D258242006C85B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7D42AF71D258242006C85B0 /* Grappling PenguinsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Grappling PenguinsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7D42AFB1D258242006C85B0 /* Grappling_PenguinsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grappling_PenguinsUITests.swift; sourceTree = "<group>"; };
+		E7D42AFD1D258242006C85B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7D42B091D259C74006C85B0 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		E7D42B0D1D259E57006C85B0 /* Prototype Ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Prototype Ground.png"; sourceTree = "<group>"; };
+		E7D42B131D25C12E006C85B0 /* Hook Gun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hook Gun.png"; sourceTree = "<group>"; };
+		E7D42B171D25C208006C85B0 /* PenguinActions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PenguinActions.sks; sourceTree = "<group>"; };
+		E7D9808D1D27192B004B953B /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		E7D980901D272546004B953B /* Grappling Line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Grappling Line.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E7D42AD11D258242006C85B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7D42AE91D258242006C85B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7D42AF41D258242006C85B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E7D42ACB1D258242006C85B0 = {
+			isa = PBXGroup;
+			children = (
+				E7D42B171D25C208006C85B0 /* PenguinActions.sks */,
+				E7D42AD61D258242006C85B0 /* Grappling Penguins */,
+				E7D42AEF1D258242006C85B0 /* Grappling PenguinsTests */,
+				E7D42AFA1D258242006C85B0 /* Grappling PenguinsUITests */,
+				E7D42AD51D258242006C85B0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E7D42AD51D258242006C85B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E7D42AD41D258242006C85B0 /* Grappling Penguins.app */,
+				E7D42AEC1D258242006C85B0 /* Grappling PenguinsTests.xctest */,
+				E7D42AF71D258242006C85B0 /* Grappling PenguinsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E7D42AD61D258242006C85B0 /* Grappling Penguins */ = {
+			isa = PBXGroup;
+			children = (
+				E7D42AD71D258242006C85B0 /* AppDelegate.swift */,
+				E7D42AD91D258242006C85B0 /* GameScene.sks */,
+				E7D42ADB1D258242006C85B0 /* GameScene.swift */,
+				E7D9808D1D27192B004B953B /* Hero.swift */,
+				E7C324D51D3407C5007B31E4 /* GrapplingHook.swift */,
+				E729C0031D35A0B400F01D59 /* Ground.swift */,
+				E729C0011D35889600F01D59 /* PhysicsCategory.swift */,
+				E7D42ADD1D258242006C85B0 /* GameViewController.swift */,
+				E7D42ADF1D258242006C85B0 /* Main.storyboard */,
+				E7D42AE21D258242006C85B0 /* Assets.xcassets */,
+				E7D42AE41D258242006C85B0 /* LaunchScreen.storyboard */,
+				E7D42AE71D258242006C85B0 /* Info.plist */,
+				E7D9808F1D27198D004B953B /* Images */,
+			);
+			path = "Grappling Penguins";
+			sourceTree = "<group>";
+		};
+		E7D42AEF1D258242006C85B0 /* Grappling PenguinsTests */ = {
+			isa = PBXGroup;
+			children = (
+				E7D42AF01D258242006C85B0 /* Grappling_PenguinsTests.swift */,
+				E7D42AF21D258242006C85B0 /* Info.plist */,
+			);
+			path = "Grappling PenguinsTests";
+			sourceTree = "<group>";
+		};
+		E7D42AFA1D258242006C85B0 /* Grappling PenguinsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E7D42AFB1D258242006C85B0 /* Grappling_PenguinsUITests.swift */,
+				E7D42AFD1D258242006C85B0 /* Info.plist */,
+			);
+			path = "Grappling PenguinsUITests";
+			sourceTree = "<group>";
+		};
+		E7D9808F1D27198D004B953B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E7D42B0D1D259E57006C85B0 /* Prototype Ground.png */,
+				E7B040A41D25E2A2008B74D0 /* Three.png */,
+				E7B040AA1D25E2A9008B74D0 /* Four.png */,
+				E7B040AB1D25E2A9008B74D0 /* Five.png */,
+				E7B040A51D25E2A2008B74D0 /* Two.png */,
+				E7B040A61D25E2A2008B74D0 /* Six.png */,
+				E7D42B091D259C74006C85B0 /* bg.png */,
+				E7D42B131D25C12E006C85B0 /* Hook Gun.png */,
+				E7D980901D272546004B953B /* Grappling Line.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E7D42AD31D258242006C85B0 /* Grappling Penguins */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7D42B001D258242006C85B0 /* Build configuration list for PBXNativeTarget "Grappling Penguins" */;
+			buildPhases = (
+				E7D42AD01D258242006C85B0 /* Sources */,
+				E7D42AD11D258242006C85B0 /* Frameworks */,
+				E7D42AD21D258242006C85B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Grappling Penguins";
+			productName = "Grappling Penguins";
+			productReference = E7D42AD41D258242006C85B0 /* Grappling Penguins.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E7D42AEB1D258242006C85B0 /* Grappling PenguinsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7D42B031D258242006C85B0 /* Build configuration list for PBXNativeTarget "Grappling PenguinsTests" */;
+			buildPhases = (
+				E7D42AE81D258242006C85B0 /* Sources */,
+				E7D42AE91D258242006C85B0 /* Frameworks */,
+				E7D42AEA1D258242006C85B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E7D42AEE1D258242006C85B0 /* PBXTargetDependency */,
+			);
+			name = "Grappling PenguinsTests";
+			productName = "Grappling PenguinsTests";
+			productReference = E7D42AEC1D258242006C85B0 /* Grappling PenguinsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E7D42AF61D258242006C85B0 /* Grappling PenguinsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E7D42B061D258242006C85B0 /* Build configuration list for PBXNativeTarget "Grappling PenguinsUITests" */;
+			buildPhases = (
+				E7D42AF31D258242006C85B0 /* Sources */,
+				E7D42AF41D258242006C85B0 /* Frameworks */,
+				E7D42AF51D258242006C85B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E7D42AF91D258242006C85B0 /* PBXTargetDependency */,
+			);
+			name = "Grappling PenguinsUITests";
+			productName = "Grappling PenguinsUITests";
+			productReference = E7D42AF71D258242006C85B0 /* Grappling PenguinsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E7D42ACC1D258242006C85B0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Alan Gao";
+				TargetAttributes = {
+					E7D42AD31D258242006C85B0 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = CRQLR7R8J3;
+					};
+					E7D42AEB1D258242006C85B0 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = E7D42AD31D258242006C85B0;
+					};
+					E7D42AF61D258242006C85B0 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = E7D42AD31D258242006C85B0;
+					};
+				};
+			};
+			buildConfigurationList = E7D42ACF1D258242006C85B0 /* Build configuration list for PBXProject "Grappling Penguins" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E7D42ACB1D258242006C85B0;
+			productRefGroup = E7D42AD51D258242006C85B0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E7D42AD31D258242006C85B0 /* Grappling Penguins */,
+				E7D42AEB1D258242006C85B0 /* Grappling PenguinsTests */,
+				E7D42AF61D258242006C85B0 /* Grappling PenguinsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E7D42AD21D258242006C85B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7D42B0A1D259C74006C85B0 /* bg.png in Resources */,
+				E7B040A91D25E2A2008B74D0 /* Six.png in Resources */,
+				E7D42B181D25C208006C85B0 /* PenguinActions.sks in Resources */,
+				E7B040AC1D25E2A9008B74D0 /* Four.png in Resources */,
+				E7D42ADA1D258242006C85B0 /* GameScene.sks in Resources */,
+				E7D42AE61D258242006C85B0 /* LaunchScreen.storyboard in Resources */,
+				E7D42B141D25C12E006C85B0 /* Hook Gun.png in Resources */,
+				E7D42AE31D258242006C85B0 /* Assets.xcassets in Resources */,
+				E7B040A81D25E2A2008B74D0 /* Two.png in Resources */,
+				E7B040A71D25E2A2008B74D0 /* Three.png in Resources */,
+				E7D42B0E1D259E57006C85B0 /* Prototype Ground.png in Resources */,
+				E7D42AE11D258242006C85B0 /* Main.storyboard in Resources */,
+				E7D980911D272546004B953B /* Grappling Line.png in Resources */,
+				E7B040AD1D25E2A9008B74D0 /* Five.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7D42AEA1D258242006C85B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7D42AF51D258242006C85B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E7D42AD01D258242006C85B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7C324D61D3407C5007B31E4 /* GrapplingHook.swift in Sources */,
+				E7D42ADC1D258242006C85B0 /* GameScene.swift in Sources */,
+				E729C0041D35A0B400F01D59 /* Ground.swift in Sources */,
+				E7D42ADE1D258242006C85B0 /* GameViewController.swift in Sources */,
+				E729C0021D35889600F01D59 /* PhysicsCategory.swift in Sources */,
+				E7D42AD81D258242006C85B0 /* AppDelegate.swift in Sources */,
+				E7D9808E1D27192B004B953B /* Hero.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7D42AE81D258242006C85B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7D42AF11D258242006C85B0 /* Grappling_PenguinsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E7D42AF31D258242006C85B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E7D42AFC1D258242006C85B0 /* Grappling_PenguinsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E7D42AEE1D258242006C85B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E7D42AD31D258242006C85B0 /* Grappling Penguins */;
+			targetProxy = E7D42AED1D258242006C85B0 /* PBXContainerItemProxy */;
+		};
+		E7D42AF91D258242006C85B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E7D42AD31D258242006C85B0 /* Grappling Penguins */;
+			targetProxy = E7D42AF81D258242006C85B0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E7D42ADF1D258242006C85B0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7D42AE01D258242006C85B0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E7D42AE41D258242006C85B0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7D42AE51D258242006C85B0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E7D42AFE1D258242006C85B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E7D42AFF1D258242006C85B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E7D42B011D258242006C85B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Grappling Penguins/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlanGao.Grappling-Penguins";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		E7D42B021D258242006C85B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Grappling Penguins/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlanGao.Grappling-Penguins";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		E7D42B041D258242006C85B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "Grappling PenguinsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlanGao.Grappling-PenguinsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Grappling Penguins.app/Grappling Penguins";
+			};
+			name = Debug;
+		};
+		E7D42B051D258242006C85B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Grappling PenguinsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlanGao.Grappling-PenguinsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Grappling Penguins.app/Grappling Penguins";
+			};
+			name = Release;
+		};
+		E7D42B071D258242006C85B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = "Grappling PenguinsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlanGao.Grappling-PenguinsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Grappling Penguins";
+			};
+			name = Debug;
+		};
+		E7D42B081D258242006C85B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Grappling PenguinsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlanGao.Grappling-PenguinsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Grappling Penguins";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E7D42ACF1D258242006C85B0 /* Build configuration list for PBXProject "Grappling Penguins" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7D42AFE1D258242006C85B0 /* Debug */,
+				E7D42AFF1D258242006C85B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7D42B001D258242006C85B0 /* Build configuration list for PBXNativeTarget "Grappling Penguins" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7D42B011D258242006C85B0 /* Debug */,
+				E7D42B021D258242006C85B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7D42B031D258242006C85B0 /* Build configuration list for PBXNativeTarget "Grappling PenguinsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7D42B041D258242006C85B0 /* Debug */,
+				E7D42B051D258242006C85B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E7D42B061D258242006C85B0 /* Build configuration list for PBXNativeTarget "Grappling PenguinsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7D42B071D258242006C85B0 /* Debug */,
+				E7D42B081D258242006C85B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E7D42ACC1D258242006C85B0 /* Project object */;
+}
