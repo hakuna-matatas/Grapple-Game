@@ -10,11 +10,12 @@ import SpriteKit
 
 class Hero: SKSpriteNode {
     let JUMP_VECTOR = CGVector(dx: 0, dy: 20)
-
+    
     func jump() {
         /* NOTE: Restitution of ground and character
          sprite set to 0 to prevent bouncing */
         if(self.physicsBody?.velocity.dy == 0) {
+            //self.physicsBody?.applyImpulse(JUMP_VECTOR)
             self.physicsBody?.applyImpulse(JUMP_VECTOR)
         }
     }

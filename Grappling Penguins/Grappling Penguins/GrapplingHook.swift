@@ -10,35 +10,45 @@ import SpriteKit
 
 class GrapplingHook: SKShapeNode {
     var grapplingLine: SKShapeNode = SKShapeNode()
-    let GRAPPLING_HOOK_RELEASE_VECTOR = CGVector(dx: 5, dy: 5)
-    let GRAPPLING_HOOK_RETRACT_VECTOR = CGVector(dx: -2, dy: -2)
+    let GRAPPLING_HOOK_RELEASE_VECTOR = CGVector(dx: 500, dy: 500)
+    let GRAPPLING_HOOK_MAX_LENGTH: CGFloat = 300
+    
+    var yOffset: CGFloat = 0
     
     func shootGrapplingHook() {
-        self.physicsBody?.applyImpulse(GRAPPLING_HOOK_RELEASE_VECTOR)
-    }
-    
-    func retractGrapplingHook() {
-        self.physicsBody?.applyImpulse(GRAPPLING_HOOK_RETRACT_VECTOR)
+        self.physicsBody?.velocity = GRAPPLING_HOOK_RELEASE_VECTOR
     }
     
     func animateGrapplingHook(startPoint: CGPoint, endPoint: CGPoint) {
         let PATH = UIBezierPath()
         PATH.moveToPoint(endPoint)
         PATH.addLineToPoint(startPoint)
-        grapplingLine.path = PATH.CGPath
         
-        grapplingLine.lineWidth = 4
-        grapplingLine.strokeColor = UIColor.darkGrayColor()
+        grapplingLine.path = PATH.CGPath
     }
     
     init(heroPosition: CGPoint) {
         super.init()
-        initPhysBody(heroPosition)
+        
+        /* Setting up grappling hook */
+        initPhysBody()
+        createHookGraphic()
+        self.position = heroPosition
         self.addChild(grapplingLine)
+        
+        /* Setting up grappling line */
+        grapplingLine.lineWidth = 2
+        grapplingLine.strokeColor = UIColor.darkGrayColor()
     }
     
-    func initPhysBody(heroPosition: CGPoint) {
-        let RECT_SIZE = CGSize(width: 28, height: 28)
+    func createHookGraphic() {
+        let box = UIBezierPath(roundedRect: CGRect(x: -10, y: -10, width: 20, height: 20), cornerRadius: 3)
+        self.path = box.CGPath
+        self.fillColor = UIColor.clearColor()
+    }
+    
+    func initPhysBody() {
+        let RECT_SIZE = CGSize(width: 18, height: 18)
         let HOOK_NODE_PHYS_BODY = SKPhysicsBody(rectangleOfSize: RECT_SIZE)
         self.physicsBody = HOOK_NODE_PHYS_BODY
         
@@ -48,13 +58,7 @@ class GrapplingHook: SKShapeNode {
         
         self.physicsBody?.categoryBitMask = PhysicsCategory.GrapplingHook
         self.physicsBody?.collisionBitMask = PhysicsCategory.Ground
-        self.physicsBody?.contactTestBitMask = PhysicsCategory.None
-        
-        self.position = heroPosition
-        
-        //Debugging purposes
-        self.lineWidth = 4
-        self.strokeColor = UIColor.darkGrayColor()
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.Ceiling
     }
     
     required init?(coder aDecoder: NSCoder) {
