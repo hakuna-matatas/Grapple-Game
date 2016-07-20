@@ -10,12 +10,11 @@ import Foundation
 import SpriteKit
 
 class LevelNode: SKNode {
-    
     var levelWidth:CGFloat = 0
+    let BACKGROUND_LENGTH: CGFloat = 667
     
     override init() {
         super.init()
-
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -23,21 +22,15 @@ class LevelNode: SKNode {
     }
     
     func loadLevel() {
-        let path = NSBundle.mainBundle().pathForResource("Tutorial", ofType: "sks")!
-        let newLevel = SKReferenceNode(URL: NSURL(fileURLWithPath: path))
-        self.addChild(newLevel)
+        let tutorialScene = SKScene(fileNamed: "Tutorial.sks")!
+        let level = tutorialScene.childNodeWithName("tutorialNode")!
+        level.removeFromParent()
+        self.addChild(level)
 
-        newLevel.enumerateChildNodesWithName("background", usingBlock: {
+        level.enumerateChildNodesWithName("background", usingBlock: {
             node, stop in
-            
-            print(node)
-            self.levelWidth += 667
+            self.levelWidth += self.BACKGROUND_LENGTH
         })
-        
-        for child in newLevel.children {
-            print(child.position)
-        }
         print(levelWidth)
     }
-    
 }

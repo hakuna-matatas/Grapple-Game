@@ -19,7 +19,7 @@ class PlayingState: GKState {
     
     override func updateWithDeltaTime(seconds: NSTimeInterval) {
         scene.camera!.position = CGPoint(x: scene.hero.position.x, y: scene.camera!.position.y)
-        scene.camera!.position.x.clamp(283, scene.levelNode.levelWidth)
+        scene.camera!.position.x.clamp(333.5, scene.levelNode.levelWidth - 333.5)
 
         
         if(scene.hero.physicsBody?.velocity.dx == 0) {
