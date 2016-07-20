@@ -8,9 +8,17 @@
 
 import SpriteKit
 
+
+/* 
+   This class contains all the elements of the game over screen in a SKNode.
+   The class is instantiated in GameOverState.swift.
+ 
+   NOTE: The reason this class subclasses SKNode and not SKScene is because
+         the scene will overlay GameScene, rather than replace it entirely. 
+ */
 class GameOverScreen: SKNode {
+    /* All the UI elements of the game over screen */
     var restartButton: MSButtonNode!
-    
     var background: SKSpriteNode!
     var deathPic: SKSpriteNode!
     var percentageCompleteLabel = SKLabelNode()

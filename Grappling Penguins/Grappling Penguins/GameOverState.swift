@@ -22,6 +22,7 @@ class GameOverState: GKState {
         scene.hero.physicsBody!.velocity.dx = 0
         
         if(gameoverOverlay.parent == nil) {
+            /* Moves the gameoverOverlay onscreen */
             gameoverOverlay.position.y = -300
             gameoverOverlay.runAction(SKAction.moveToY(0, duration: 0.5))
             scene.camera!.addChild(gameoverOverlay)

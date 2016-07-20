@@ -9,17 +9,24 @@
 import SpriteKit
 
 class GrapplingHook: SKShapeNode {
+    /* The line that connects hero and grapplingHook */
     var grapplingLine: SKShapeNode = SKShapeNode()
+    
     let GRAPPLING_HOOK_RELEASE_VECTOR = CGVector(dx: 700, dy: 700)
     let GRAPPLING_HOOK_MAX_LENGTH: CGFloat = 300
     
-    var yOffset: CGFloat = 0
-    
     func shootGrapplingHook() {
-        self.physicsBody?.velocity = GRAPPLING_HOOK_RELEASE_VECTOR
+        self.physicsBody!.velocity = GRAPPLING_HOOK_RELEASE_VECTOR
+        
+        if let hero = self.parent?.childNodeWithName("hero") {
+            /* Ensures grapplingHook always released at ~45 degree angle from hero */
+            self.physicsBody!.velocity.dx += hero.physicsBody!.velocity.dx
+            self.physicsBody!.velocity.dy += hero.physicsBody!.velocity.dy
+        }
     }
-    
+
     func animateGrapplingHook(startPoint: CGPoint, endPoint: CGPoint) {
+        /* Draws a line from startPoint to endPoint */
         let PATH = UIBezierPath()
         PATH.moveToPoint(endPoint)
         PATH.addLineToPoint(startPoint)
@@ -39,11 +46,10 @@ class GrapplingHook: SKShapeNode {
         /* Setting up grappling line */
         grapplingLine.lineWidth = 2
         grapplingLine.strokeColor = UIColor.darkGrayColor()
-        
-        self.name = "GrapplingHook"
     }
     
     func createHookGraphic() {
+        /* Creates a box */
         let box = UIBezierPath(roundedRect: CGRect(x: -10, y: -10, width: 20, height: 20), cornerRadius: 3)
         self.path = box.CGPath
         self.fillColor = UIColor.clearColor()

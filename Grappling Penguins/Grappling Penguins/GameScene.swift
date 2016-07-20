@@ -10,38 +10,44 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
+    /* Game States */
     var gameState: GKStateMachine!
     var readyState: GKState!
     var playingState: GKState!
     var gameOverState: GKState!
     var winState: GKState!
     
+    /* GKStates have update functions, but require a NSTimeInterval
+       as a parameter. We subtract lastUpdateTime from currentTime (found 
+       in the update method), thus finding the time between update calls */
     var lastUpdateTime: CFTimeInterval = 0
     
-    /* Declaring variables */
+    /* Each level has the same start area. These
+       sprite nodes make up this start area. */
     var ground: SKSpriteNode!
     var water1: SKSpriteNode!
     var water2: SKSpriteNode!
     var ceiling1: SKSpriteNode!
     var background1: SKSpriteNode!
     
+    /* Each level is loaded into the level node. See class for more details */
     var levelNode = LevelNode()
 
     var hero: Hero!
     var grapplingHook: GrapplingHook!
+    var grapplingHookMadeContact = false
     
+    /* Used to scroll the water across the world */
     var waterScrollNode: SKNode!
     let waterScrollSpeed: CGFloat = 5.0
     
-    let NORMAL_TEXTURE = SKTexture(imageNamed: "Stationary-1")
+    let STATIONARY_TEXTURE = SKTexture(imageNamed: "Stationary-1")
     let FLYING_TEXTURE = SKTexture(imageNamed: "Flying-1")
+    
     
     override func didMoveToView(view: SKView) {
         initializeVars()
-        self.physicsWorld.gravity = CGVector(dx: 0, dy: -7)
-        hero.setupPhysics()
-        
-        physicsWorld.contactDelegate = self
+        setupPhysics()
         
         levelNode.loadLevel()
         
@@ -56,54 +62,43 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        hero.texture = NORMAL_TEXTURE
+        if(gameState.currentState == gameOverState) { return }
+        
+        hero.texture = STATIONARY_TEXTURE
         
         for touch in touches {
             let location = touch.locationInNode(camera!)
             let X_COOR_HALF_SCREEN = camera!.frame.size.width / 2
             
+            /* Right side of screen tapped */
             if(location.x >= X_COOR_HALF_SCREEN) {
+                /* Initializes grappling hook and shoots it */
                 grapplingHook = GrapplingHook(heroPosition: hero.position)
-                self.addChild(grapplingHook!)
-                
-                grapplingHook!.shootGrapplingHook()
-                
-                /* Ensures grapplingHook always released at ~45 degree angle from hero */
-                grapplingHook!.physicsBody!.velocity.dx += hero.physicsBody!.velocity.dx
-                grapplingHook!.physicsBody!.velocity.dy += hero.physicsBody!.velocity.dy
+                self.addChild(grapplingHook)
+                grapplingHook.shootGrapplingHook()
             }
+            /* Left side of screen tapped */
             else {
-                //Left side of screen
                 hero.jump()
             }
         }
         
+        /* Game starts when player taps the screen */
         if(gameState.currentState == readyState) {
             gameState.enterState(PlayingState)
         }
     }
     
-    override func update(currentTime: CFTimeInterval) {
-        scrollWater()
-        
-        if(hero.position.y < 0) { gameState.enterState(GameOverState) }
-        
-        let timePassed = currentTime - lastUpdateTime
-        lastUpdateTime = currentTime
-        gameState.updateWithDeltaTime(timePassed)
-    }
-    
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if(gameState.currentState == gameOverState) { return }
-        
         hero.texture = FLYING_TEXTURE
         
-        /* Don't release grappling hook if jump button is pressed */
+        /* Determining if left or right side of screen was tapped */
         if let _ = grapplingHook {
             for touch in touches {
                 let location = touch.locationInNode(camera!)
                 let X_COOR_HALF_SCREEN = camera!.frame.size.width / 2
                 
+                /* Don't release grappling hook if jump button is pressed */
                 if(location.x >= X_COOR_HALF_SCREEN) {
                     grapplingHook.removeFromParent()
                     boostXVelocity()
@@ -112,7 +107,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    var grapplingHookMadeContact = false
+    override func update(currentTime: CFTimeInterval) {
+        if(hero.physicsBody?.velocity.dx == 0) {
+            hero.texture = STATIONARY_TEXTURE
+        }
+        
+        scrollWater()
+        
+        /* Hero dies if he falls below screen */
+        if(hero.position.y < 0) { gameState.enterState(GameOverState) }
+        
+        let timePassed = currentTime - lastUpdateTime
+        lastUpdateTime = currentTime
+        gameState.updateWithDeltaTime(timePassed)
+    }
+    
     func didBeginContact(contact: SKPhysicsContact) {
         let nodeA = contact.bodyA.node
         let nodeB = contact.bodyB.node
@@ -131,23 +140,28 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if grapplingHook == nil { return }
         
         if(grapplingHookMadeContact) {
+            /* Prevents grapplingHook from moving */
             grapplingHook.physicsBody?.dynamic = false
             
+            /* The retracting motion of the grappling hook is simulated by a SKPhysicsJointSpring.
+               The initial length of the spring is the distance between bodyA and bodyB when the 
+               spring is first created. To simulate a retracting motion, we set the position of the hero
+               equal to that of the grapplingHook, create the spring, then return the hero to its original
+               position */
             let positionPlaceholder = hero.position
             hero.position = grapplingHook.position
-            
             let springJoint = SKPhysicsJointSpring.jointWithBodyA(
                 grapplingHook.physicsBody!,
                 bodyB: hero.physicsBody!,
                 anchorA: hero.position,
                 anchorB: grapplingHook.position)
+            physicsWorld.addJoint(springJoint)
             
             springJoint.damping = 4
             springJoint.frequency = 1
-            physicsWorld.addJoint(springJoint)
             hero.position = positionPlaceholder
-            grapplingHookMadeContact = false
             
+            grapplingHookMadeContact = false
             grapplingHook.fillColor = UIColor.blueColor()
         }
     }
@@ -180,6 +194,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         hero = self.childNodeWithName("hero") as! Hero
         self.addChild(levelNode)
         
+        
+    }
+    
+    func setupPhysics() {
+        /* This function changes the gravity of the world, gives
+           all relevant nodes physics bodies, and creates a contactDelegate */
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: -7)
+        
+        hero.setupPhysics()
+        
         ground.physicsBody!.categoryBitMask = PhysicsCategory.Ground
         ground.physicsBody?.collisionBitMask = PhysicsCategory.Hero
         ground.physicsBody?.contactTestBitMask = PhysicsCategory.None
@@ -187,6 +211,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ceiling1.physicsBody?.categoryBitMask = PhysicsCategory.Ceiling
         ceiling1.physicsBody?.collisionBitMask = PhysicsCategory.Hero
         ceiling1.physicsBody?.contactTestBitMask = PhysicsCategory.GrapplingHook
+        
+        physicsWorld.contactDelegate = self
     }
 }
 
