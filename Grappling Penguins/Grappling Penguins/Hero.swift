@@ -9,21 +9,32 @@
 import SpriteKit
 
 class Hero: SKSpriteNode {
+    let HERO_MASS = CGFloat(0.03)
     let JUMP_VECTOR = CGVector(dx: 0, dy: 20)
     
     func jump() {
-        /* NOTE: Restitution of ground and character
-         sprite set to 0 to prevent bouncing */
-        if(self.physicsBody?.velocity.dy == 0) {
-            //self.physicsBody?.applyImpulse(JUMP_VECTOR)
-            self.physicsBody?.applyImpulse(JUMP_VECTOR)
+        if let physBody = self.physicsBody {
+            /* NOTE: Restitution of ground and character
+             sprite set to 0 to prevent bouncing */
+            if(physBody.velocity.dy == 0) {
+                //self.physicsBody?.applyImpulse(JUMP_VECTOR)
+                physBody.applyImpulse(JUMP_VECTOR)
+            }
         }
     }
     
     func setupPhysics() {
-        self.physicsBody?.categoryBitMask = PhysicsCategory.Hero
-        self.physicsBody?.collisionBitMask = PhysicsCategory.Ground
-        self.physicsBody?.contactTestBitMask = PhysicsCategory.None
+        if let physBody = self.physicsBody {
+            physBody.categoryBitMask = PhysicsCategory.Hero
+            physBody.collisionBitMask = PhysicsCategory.Ground
+            physBody.contactTestBitMask = PhysicsCategory.None
+            
+            physBody.dynamic = true
+            physBody.affectedByGravity = true
+            physBody.allowsRotation = false
+            
+            physBody.mass = HERO_MASS
+        }
     }
     
     

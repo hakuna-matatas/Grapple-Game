@@ -10,7 +10,7 @@ import SpriteKit
 
 class GrapplingHook: SKShapeNode {
     var grapplingLine: SKShapeNode = SKShapeNode()
-    let GRAPPLING_HOOK_RELEASE_VECTOR = CGVector(dx: 500, dy: 500)
+    let GRAPPLING_HOOK_RELEASE_VECTOR = CGVector(dx: 700, dy: 700)
     let GRAPPLING_HOOK_MAX_LENGTH: CGFloat = 300
     
     var yOffset: CGFloat = 0
@@ -39,6 +39,8 @@ class GrapplingHook: SKShapeNode {
         /* Setting up grappling line */
         grapplingLine.lineWidth = 2
         grapplingLine.strokeColor = UIColor.darkGrayColor()
+        
+        self.name = "GrapplingHook"
     }
     
     func createHookGraphic() {

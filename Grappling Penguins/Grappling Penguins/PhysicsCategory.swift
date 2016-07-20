@@ -9,10 +9,12 @@
 import Foundation
 
 struct PhysicsCategory {
-    static let None:                UInt32 = 0b000000
-    static let GrapplingHook:       UInt32 = 0b000010
-    static let Hero:                UInt32 = 0b000100
-    static let Ring:                UInt32 = 0b001000
-    static let Ground:              UInt32 = 0b010000
-    static let Ceiling:             UInt32 = 0b100000
+    static let None:                UInt32 = 0b00000000
+    static let GrapplingHook:       UInt32 = 0b00000010
+    static let Hero:                UInt32 = 0b00000100
+    static let Ring:                UInt32 = 0b00001000
+    static let Ground:              UInt32 = 0b00010000
+    static let Ceiling:             UInt32 = 0b00100000
+    static let Goal:                UInt32 = 0b01000000
+    static let Obstacle:            UInt32 = 0b10000000
 }

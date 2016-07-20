@@ -7,66 +7,97 @@
 //
 
 import SpriteKit
+import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
-    /* Declaring variables */
-    var groundScrollNode: SKNode!
-    var groundSprite1: SKSpriteNode!
-    var groundSprite2: SKSpriteNode!
-    var ceilingSprite1: SKSpriteNode!
-    let groundScrollSpeed: CGFloat = 0.0
+    var gameState: GKStateMachine!
+    var readyState: GKState!
+    var playingState: GKState!
+    var gameOverState: GKState!
+    var winState: GKState!
     
+    var lastUpdateTime: CFTimeInterval = 0
+    
+    /* Declaring variables */
+    var ground: SKSpriteNode!
+    var water1: SKSpriteNode!
+    var water2: SKSpriteNode!
+    var ceiling1: SKSpriteNode!
+    var background1: SKSpriteNode!
+    
+    var levelNode = LevelNode()
+
     var hero: Hero!
     var grapplingHook: GrapplingHook!
     
+    var waterScrollNode: SKNode!
+    let waterScrollSpeed: CGFloat = 5.0
+    
+    let NORMAL_TEXTURE = SKTexture(imageNamed: "Stationary-1")
+    let FLYING_TEXTURE = SKTexture(imageNamed: "Flying-1")
+    
     override func didMoveToView(view: SKView) {
         initializeVars()
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: -7)
         hero.setupPhysics()
+        
         physicsWorld.contactDelegate = self
+        
+        levelNode.loadLevel()
+        
+        readyState = ReadyState(scene: self)
+        playingState = PlayingState(scene: self)
+        gameOverState = GameOverState(scene: self)
+        winState = WinState(scene: self)
+        
+        gameState = GKStateMachine(states: [readyState, playingState, gameOverState, winState])
+        gameState.enterState(ReadyState)
     }
     
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        hero.texture = NORMAL_TEXTURE
+        
         for touch in touches {
             let location = touch.locationInNode(camera!)
             let X_COOR_HALF_SCREEN = camera!.frame.size.width / 2
             
             if(location.x >= X_COOR_HALF_SCREEN) {
                 grapplingHook = GrapplingHook(heroPosition: hero.position)
-                self.addChild(grapplingHook)
+                self.addChild(grapplingHook!)
                 
-                grapplingHook.shootGrapplingHook()  
+                grapplingHook!.shootGrapplingHook()
+                
+                /* Ensures grapplingHook always released at ~45 degree angle from hero */
+                grapplingHook!.physicsBody!.velocity.dx += hero.physicsBody!.velocity.dx
+                grapplingHook!.physicsBody!.velocity.dy += hero.physicsBody!.velocity.dy
             }
             else {
                 //Left side of screen
                 hero.jump()
             }
         }
-    }
-    
-    let MIN_DIST_HOOK_AND_HERO = CGFloat(50)
-    override func update(currentTime: CFTimeInterval) {
-        camera!.position = CGPoint(x: hero.position.x, y: camera!.position.y)
         
-        if let _ = grapplingHook {
-            if((grapplingHook.position.x - hero.position.x) < MIN_DIST_HOOK_AND_HERO &&
-                grapplingHookConnected == false) {
-                grapplingHook.position.x += MIN_DIST_HOOK_AND_HERO
-            }
-            
-            let startPoint = convertPoint(hero.position, toNode: grapplingHook)
-            let endPoint = convertPoint(grapplingHook.position, toNode: grapplingHook)
-            grapplingHook.animateGrapplingHook(startPoint, endPoint: endPoint)
-            
-            if(startPoint.distance(endPoint) > grapplingHook.GRAPPLING_HOOK_MAX_LENGTH) {
-                grapplingHook.removeFromParent()
-            }
-            
-            boostXVelocity()
+        if(gameState.currentState == readyState) {
+            gameState.enterState(PlayingState)
         }
     }
     
+    override func update(currentTime: CFTimeInterval) {
+        scrollWater()
+        
+        if(hero.position.y < 0) { gameState.enterState(GameOverState) }
+        
+        let timePassed = currentTime - lastUpdateTime
+        lastUpdateTime = currentTime
+        gameState.updateWithDeltaTime(timePassed)
+    }
+    
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if(gameState.currentState == gameOverState) { return }
+        
+        hero.texture = FLYING_TEXTURE
+        
         /* Don't release grappling hook if jump button is pressed */
         if let _ = grapplingHook {
             for touch in touches {
@@ -75,17 +106,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 if(location.x >= X_COOR_HALF_SCREEN) {
                     grapplingHook.removeFromParent()
+                    boostXVelocity()
                 }
             }
-            grapplingHookConnected = false
         }
     }
     
     var grapplingHookMadeContact = false
-    var grapplingHookConnected = false
     func didBeginContact(contact: SKPhysicsContact) {
-        grapplingHookMadeContact = true
-        grapplingHookConnected = true
+        let nodeA = contact.bodyA.node
+        let nodeB = contact.bodyB.node
+        
+        if(nodeA!.name == "GrapplingHook" || nodeB!.name == "GrapplingHook") {
+            grapplingHookMadeContact = true
+        }
+        else if(nodeA!.physicsBody?.categoryBitMask == PhysicsCategory.Goal ||
+                nodeB!.physicsBody?.categoryBitMask == PhysicsCategory.Goal) {
+            gameState.enterState(WinState)
+        }
+    
     }
     
     override func didSimulatePhysics() {
@@ -114,44 +153,42 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func boostXVelocity() {
-        hero.physicsBody!.velocity.dx += 1
+        hero.physicsBody!.applyImpulse(CGVector(dx: 5, dy: 0))
     }
     
-    func scrollGround() {
-        groundScrollNode.position.x -= groundScrollSpeed
+    func scrollWater() {
+        waterScrollNode.position.x -= waterScrollSpeed
         
-        for ground in groundScrollNode.children as! [SKSpriteNode] {
-            let groundPosition = groundScrollNode.convertPoint(ground.position, toNode: self)
+        for water in waterScrollNode.children as! [SKSpriteNode] {
+            let waterPosition = waterScrollNode.convertPoint(water.position, toNode: camera!)
             
-            if(groundPosition.x <= -(ground.size.width / 2)) {
-                let newPosition = CGPoint(x: self.size.width + (ground.size.width / 2), y: ground.position.y)
-                ground.position = self.convertPoint(newPosition, toNode: groundScrollNode)
+            if(waterPosition.x <= -water.size.width) {
+                let newPosition = CGPoint(x: water.size.width,
+                                          y: waterPosition.y)
+                water.position = camera!.convertPoint(newPosition, toNode: waterScrollNode)
             }
         }
     }
     
     func initializeVars() {
-        groundScrollNode = self.childNodeWithName("groundScrollNode")
-        groundSprite1 = self.childNodeWithName("//groundSprite1") as! SKSpriteNode
-        groundSprite2 = self.childNodeWithName("//groundSprite2") as! SKSpriteNode
-        ceilingSprite1 = self.childNodeWithName("ceilingSprite1") as! SKSpriteNode
-        
-        groundSprite1.physicsBody!.categoryBitMask = PhysicsCategory.Ground
-        groundSprite1.physicsBody?.collisionBitMask = PhysicsCategory.Hero
-        groundSprite1.physicsBody?.contactTestBitMask = PhysicsCategory.None
-        
-        groundSprite2.physicsBody!.categoryBitMask = PhysicsCategory.Ground
-        groundSprite2.physicsBody?.collisionBitMask = PhysicsCategory.Hero
-        groundSprite2.physicsBody?.contactTestBitMask = PhysicsCategory.None
-        
-        ceilingSprite1.physicsBody?.categoryBitMask = PhysicsCategory.Ceiling
-        ceilingSprite1.physicsBody?.collisionBitMask = PhysicsCategory.Hero
-        ceilingSprite1.physicsBody?.contactTestBitMask = PhysicsCategory.GrapplingHook
-        
+        ground = self.childNodeWithName("ground") as! SKSpriteNode
+        water1 = self.childNodeWithName("//water1") as! SKSpriteNode
+        water2 = self.childNodeWithName("//water2") as! SKSpriteNode
+        ceiling1 = self.childNodeWithName("ceiling1") as! SKSpriteNode
+        background1 = self.childNodeWithName("background1") as! SKSpriteNode
+        waterScrollNode = self.childNodeWithName("waterScrollNode")
         hero = self.childNodeWithName("hero") as! Hero
+        self.addChild(levelNode)
+        
+        ground.physicsBody!.categoryBitMask = PhysicsCategory.Ground
+        ground.physicsBody?.collisionBitMask = PhysicsCategory.Hero
+        ground.physicsBody?.contactTestBitMask = PhysicsCategory.None
+        
+        ceiling1.physicsBody?.categoryBitMask = PhysicsCategory.Ceiling
+        ceiling1.physicsBody?.collisionBitMask = PhysicsCategory.Hero
+        ceiling1.physicsBody?.contactTestBitMask = PhysicsCategory.GrapplingHook
     }
 }
-
 
 extension CGPoint {
     func distance(point: CGPoint) -> CGFloat {
