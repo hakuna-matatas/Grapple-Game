@@ -26,27 +26,22 @@ class GameOverScreen: SKNode {
     override init() {
         super.init()
         
-        deathPic = SKSpriteNode(imageNamed: "Penguin in ice")
-        deathPic.position = CGPoint(x: -50, y: 60)
-        deathPic.zPosition = 31
-        addChild(deathPic)
-        
-        background = SKSpriteNode(imageNamed: "Game over Background")
+        background = SKSpriteNode(imageNamed: "GameOver Background")
         self.addChild(background)
         background.zPosition = 30
         
-        percentageCompleteLabel.text = "xx%"
+        percentageCompleteLabel.text = "100%"
         percentageCompleteLabel.fontSize = 80
-        percentageCompleteLabel.fontName = "Comic Sans MS-Bold"
-        percentageCompleteLabel.position = CGPoint(x: -50, y: -140)
+        percentageCompleteLabel.fontName = "Agent Orange-Bold"
+        percentageCompleteLabel.position = CGPoint(x: -50, y: -70)
         percentageCompleteLabel.zPosition = 31
-        addChild(percentageCompleteLabel)
+        self.addChild(percentageCompleteLabel)
         
         let restartButton = MSButtonNode(imageNamed: "Restart Button")
         restartButton.state = .MSButtonNodeStateActive
-        restartButton.position.x += 225
+        restartButton.position.x += 175
         restartButton.zPosition = 31
-        addChild(restartButton)
+        self.addChild(restartButton)
         
         restartButton.selectedHandler = {
             if let newGameScene = GameScene(fileNamed: "GameScene") {

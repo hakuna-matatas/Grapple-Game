@@ -46,6 +46,10 @@ class GrapplingHook: SKShapeNode {
         /* Setting up grappling line */
         grapplingLine.lineWidth = 2
         grapplingLine.strokeColor = UIColor.darkGrayColor()
+        
+        /* Used in GameScene.swift's didBeginContact method to determine
+         whether the hook has hit something it can attach onto */
+        self.name = "GrapplingHook"
     }
     
     func createHookGraphic() {
@@ -66,7 +70,7 @@ class GrapplingHook: SKShapeNode {
         
         self.physicsBody?.categoryBitMask = PhysicsCategory.GrapplingHook
         self.physicsBody?.collisionBitMask = PhysicsCategory.Ground
-        self.physicsBody?.contactTestBitMask = PhysicsCategory.Ceiling
+        self.physicsBody?.contactTestBitMask = PhysicsCategory.Cloud
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -27,10 +27,9 @@ class LevelNode: SKNode {
         level.removeFromParent()
         self.addChild(level)
 
-        level.enumerateChildNodesWithName("background", usingBlock: {
+        level.enumerateChildNodesWithName("sky", usingBlock: {
             node, stop in
             self.levelWidth += self.BACKGROUND_LENGTH
         })
-        print(levelWidth)
     }
 }

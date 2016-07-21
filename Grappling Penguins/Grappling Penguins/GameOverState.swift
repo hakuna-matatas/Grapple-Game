@@ -23,8 +23,8 @@ class GameOverState: GKState {
         
         if(gameoverOverlay.parent == nil) {
             /* Moves the gameoverOverlay onscreen */
-            gameoverOverlay.position.y = -300
-            gameoverOverlay.runAction(SKAction.moveToY(0, duration: 0.5))
+            gameoverOverlay.position.y = 300
+            gameoverOverlay.runAction(SKAction.moveToY(50, duration: 0.5))
             scene.camera!.addChild(gameoverOverlay)
         }
     }

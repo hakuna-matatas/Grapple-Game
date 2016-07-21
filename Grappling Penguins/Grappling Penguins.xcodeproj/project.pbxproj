@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		E729C0021D35889600F01D59 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E729C0011D35889600F01D59 /* PhysicsCategory.swift */; };
+		E729E2FB1D415D6C00CFCDB8 /* Snow1.sks in Resources */ = {isa = PBXBuildFile; fileRef = E729E2F91D415D6C00CFCDB8 /* Snow1.sks */; };
+		E729E2FC1D415D6C00CFCDB8 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = E729E2FA1D415D6C00CFCDB8 /* spark.png */; };
+		E729E2FE1D415DA800CFCDB8 /* Snow2.sks in Resources */ = {isa = PBXBuildFile; fileRef = E729E2FD1D415DA800CFCDB8 /* Snow2.sks */; };
+		E729E3001D4177C000CFCDB8 /* SnowEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E729E2FF1D4177C000CFCDB8 /* SnowEmitter.swift */; };
 		E72C249A1D3ED94000987D34 /* GameOverScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72C24991D3ED94000987D34 /* GameOverScreen.swift */; };
 		E72C249C1D3EED6F00987D34 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72C249B1D3EED6F00987D34 /* CGFloat+Extensions.swift */; };
 		E733039B1D3D8D5C002D7492 /* PlayingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733039A1D3D8D5C002D7492 /* PlayingState.swift */; };
@@ -19,7 +23,6 @@
 		E73303AC1D3E8D34002D7492 /* TitleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73303AB1D3E8D34002D7492 /* TitleScreen.swift */; };
 		E7339F381D3D440C0060673B /* Tutorial.sks in Resources */ = {isa = PBXBuildFile; fileRef = E7339F371D3D440C0060673B /* Tutorial.sks */; };
 		E7339F3B1D3D454E0060673B /* LevelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7339F3A1D3D454E0060673B /* LevelNode.swift */; };
-		E7339F401D3D4BAD0060673B /* Ceiling.sks in Resources */ = {isa = PBXBuildFile; fileRef = E7339F3F1D3D4BAD0060673B /* Ceiling.sks */; };
 		E7C324D61D3407C5007B31E4 /* GrapplingHook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C324D51D3407C5007B31E4 /* GrapplingHook.swift */; };
 		E7D42AD81D258242006C85B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D42AD71D258242006C85B0 /* AppDelegate.swift */; };
 		E7D42ADA1D258242006C85B0 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E7D42AD91D258242006C85B0 /* GameScene.sks */; };
@@ -53,6 +56,10 @@
 
 /* Begin PBXFileReference section */
 		E729C0011D35889600F01D59 /* PhysicsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
+		E729E2F91D415D6C00CFCDB8 /* Snow1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow1.sks; sourceTree = "<group>"; };
+		E729E2FA1D415D6C00CFCDB8 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		E729E2FD1D415DA800CFCDB8 /* Snow2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow2.sks; sourceTree = "<group>"; };
+		E729E2FF1D4177C000CFCDB8 /* SnowEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnowEmitter.swift; sourceTree = "<group>"; };
 		E72C24991D3ED94000987D34 /* GameOverScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScreen.swift; sourceTree = "<group>"; };
 		E72C249B1D3EED6F00987D34 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		E733039A1D3D8D5C002D7492 /* PlayingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingState.swift; sourceTree = "<group>"; };
@@ -64,7 +71,6 @@
 		E73303AB1D3E8D34002D7492 /* TitleScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleScreen.swift; sourceTree = "<group>"; };
 		E7339F371D3D440C0060673B /* Tutorial.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tutorial.sks; sourceTree = "<group>"; };
 		E7339F3A1D3D454E0060673B /* LevelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelNode.swift; sourceTree = "<group>"; };
-		E7339F3F1D3D4BAD0060673B /* Ceiling.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Ceiling.sks; sourceTree = "<group>"; };
 		E7C324D51D3407C5007B31E4 /* GrapplingHook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrapplingHook.swift; sourceTree = "<group>"; };
 		E7D42AD41D258242006C85B0 /* Grappling Penguins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grappling Penguins.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7D42AD71D258242006C85B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 				E73303A81D3E8CEF002D7492 /* MSButtonNode.swift */,
 				E72C249B1D3EED6F00987D34 /* CGFloat+Extensions.swift */,
 				E729C0011D35889600F01D59 /* PhysicsCategory.swift */,
+				E729E2FF1D4177C000CFCDB8 /* SnowEmitter.swift */,
 			);
 			name = "Helper Classes";
 			sourceTree = "<group>";
@@ -155,10 +162,12 @@
 		E7339F3E1D3D4B700060673B /* Game Elements */ = {
 			isa = PBXGroup;
 			children = (
-				E7339F3F1D3D4BAD0060673B /* Ceiling.sks */,
 				E7D9808D1D27192B004B953B /* Hero.swift */,
 				E7C324D51D3407C5007B31E4 /* GrapplingHook.swift */,
 				E7DF307B1D38490D002C2CB6 /* Stars.sks */,
+				E729E2F91D415D6C00CFCDB8 /* Snow1.sks */,
+				E729E2FD1D415DA800CFCDB8 /* Snow2.sks */,
+				E729E2FA1D415D6C00CFCDB8 /* spark.png */,
 			);
 			name = "Game Elements";
 			sourceTree = "<group>";
@@ -325,13 +334,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7D42ADA1D258242006C85B0 /* GameScene.sks in Resources */,
+				E729E2FE1D415DA800CFCDB8 /* Snow2.sks in Resources */,
 				E7D42AE61D258242006C85B0 /* LaunchScreen.storyboard in Resources */,
 				E7D42AE31D258242006C85B0 /* Assets.xcassets in Resources */,
 				E7DF307C1D38490D002C2CB6 /* Stars.sks in Resources */,
-				E7339F401D3D4BAD0060673B /* Ceiling.sks in Resources */,
+				E729E2FC1D415D6C00CFCDB8 /* spark.png in Resources */,
 				E73303A71D3E8A31002D7492 /* TitleScreen.sks in Resources */,
 				E7D42AE11D258242006C85B0 /* Main.storyboard in Resources */,
 				E7339F381D3D440C0060673B /* Tutorial.sks in Resources */,
+				E729E2FB1D415D6C00CFCDB8 /* Snow1.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +380,7 @@
 				E73303A21D3E88D3002D7492 /* WinState.swift in Sources */,
 				E7D9808E1D27192B004B953B /* Hero.swift in Sources */,
 				E72C249A1D3ED94000987D34 /* GameOverScreen.swift in Sources */,
+				E729E3001D4177C000CFCDB8 /* SnowEmitter.swift in Sources */,
 				E733039D1D3D8D62002D7492 /* ReadyState.swift in Sources */,
 				E73303AC1D3E8D34002D7492 /* TitleScreen.swift in Sources */,
 			);

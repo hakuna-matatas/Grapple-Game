@@ -27,8 +27,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var ground: SKSpriteNode!
     var water1: SKSpriteNode!
     var water2: SKSpriteNode!
-    var ceiling1: SKSpriteNode!
-    var background1: SKSpriteNode!
+    var cloud1: SKSpriteNode!
+    var cloud2: SKSpriteNode!
+    var sky: SKSpriteNode!
     
     /* Each level is loaded into the level node. See class for more details */
     var levelNode = LevelNode()
@@ -41,7 +42,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var waterScrollNode: SKNode!
     let waterScrollSpeed: CGFloat = 5.0
     
-    let STATIONARY_TEXTURE = SKTexture(imageNamed: "Stationary-1")
+    let STATIONARY_TEXTURE = SKTexture(imageNamed: "Stationary Penguin")
     let FLYING_TEXTURE = SKTexture(imageNamed: "Flying-1")
     
     
@@ -128,6 +129,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if(nodeA!.name == "GrapplingHook" || nodeB!.name == "GrapplingHook") {
             grapplingHookMadeContact = true
+            
+            let snow1Emitter = SnowEmitter.createEmitter("Snow1.sks", emitterPosition: nodeA!.position)
+            let snow2Emitter = SnowEmitter.createEmitter("Snow2.sks", emitterPosition: nodeA!.position)
+            
+            let emitSnowSKActions = SnowEmitter.emitSnow(self, snow1Emitter: snow1Emitter, snow2Emitter: snow2Emitter)
+            
+            self.runAction(SKAction.sequence(emitSnowSKActions))
         }
         else if(nodeA!.physicsBody?.categoryBitMask == PhysicsCategory.Goal ||
                 nodeB!.physicsBody?.categoryBitMask == PhysicsCategory.Goal) {
@@ -177,8 +185,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let waterPosition = waterScrollNode.convertPoint(water.position, toNode: camera!)
             
             if(waterPosition.x <= -water.size.width) {
-                let newPosition = CGPoint(x: water.size.width,
-                                          y: waterPosition.y)
+                /* In the case that waterPosition.x < -water.size.width, there will be a slight
+                   gap between the two water sprites. difference accounts for this gap */
+                let difference = waterPosition.x - (-water.size.width)
+                let newPosition = CGPoint(x: water.size.width + difference, y: waterPosition.y)
                 water.position = camera!.convertPoint(newPosition, toNode: waterScrollNode)
             }
         }
@@ -188,19 +198,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ground = self.childNodeWithName("ground") as! SKSpriteNode
         water1 = self.childNodeWithName("//water1") as! SKSpriteNode
         water2 = self.childNodeWithName("//water2") as! SKSpriteNode
-        ceiling1 = self.childNodeWithName("ceiling1") as! SKSpriteNode
-        background1 = self.childNodeWithName("background1") as! SKSpriteNode
+        cloud1 = self.childNodeWithName("cloud1") as! SKSpriteNode
+        cloud2 = self.childNodeWithName("cloud2") as! SKSpriteNode
+        sky = self.childNodeWithName("sky") as! SKSpriteNode
         waterScrollNode = self.childNodeWithName("waterScrollNode")
         hero = self.childNodeWithName("hero") as! Hero
         self.addChild(levelNode)
-        
-        
     }
     
     func setupPhysics() {
         /* This function changes the gravity of the world, gives
            all relevant nodes physics bodies, and creates a contactDelegate */
         self.physicsWorld.gravity = CGVector(dx: 0, dy: -7)
+        physicsWorld.contactDelegate = self
         
         hero.setupPhysics()
         
@@ -208,11 +218,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ground.physicsBody?.collisionBitMask = PhysicsCategory.Hero
         ground.physicsBody?.contactTestBitMask = PhysicsCategory.None
         
-        ceiling1.physicsBody?.categoryBitMask = PhysicsCategory.Ceiling
-        ceiling1.physicsBody?.collisionBitMask = PhysicsCategory.Hero
-        ceiling1.physicsBody?.contactTestBitMask = PhysicsCategory.GrapplingHook
+        cloud1.physicsBody?.categoryBitMask = PhysicsCategory.Cloud
+        cloud1.physicsBody?.collisionBitMask = PhysicsCategory.Hero
+        cloud1.physicsBody?.contactTestBitMask = PhysicsCategory.GrapplingHook
         
-        physicsWorld.contactDelegate = self
+        cloud2.physicsBody?.categoryBitMask = PhysicsCategory.Cloud
+        cloud2.physicsBody?.collisionBitMask = PhysicsCategory.Hero
+        cloud2.physicsBody?.contactTestBitMask = PhysicsCategory.GrapplingHook
     }
 }
 
