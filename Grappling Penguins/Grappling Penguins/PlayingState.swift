@@ -19,7 +19,7 @@ class PlayingState: GKState {
     
     override func updateWithDeltaTime(seconds: NSTimeInterval) {
         /* The camera follows the penguin, but will not go out of the level's bounds */
-        scene.camera!.position = CGPoint(x: scene.hero.position.x, y: scene.camera!.position.y)
+        scene.camera!.position = CGPoint(x: scene.hero.position.x + 237, y: scene.camera!.position.y)
         scene.camera!.position.x.clamp(333.5, scene.levelNode.levelWidth - 333.5)
         
         if let _ = scene.grapplingHook {

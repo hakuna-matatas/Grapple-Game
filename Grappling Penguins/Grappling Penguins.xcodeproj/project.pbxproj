@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E7227B611D42D67500147CA3 /* FinishScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7227B601D42D67500147CA3 /* FinishScreen.swift */; };
+		E7227B631D42D6C500147CA3 /* RestartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7227B621D42D6C500147CA3 /* RestartButton.swift */; };
+		E7227B681D42DBE500147CA3 /* CancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7227B671D42DBE500147CA3 /* CancelButton.swift */; };
+		E7227B6A1D42DC5100147CA3 /* FacebookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7227B691D42DC5100147CA3 /* FacebookButton.swift */; };
+		E7227B6C1D42DC7600147CA3 /* TwitterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7227B6B1D42DC7600147CA3 /* TwitterButton.swift */; };
 		E729C0021D35889600F01D59 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E729C0011D35889600F01D59 /* PhysicsCategory.swift */; };
 		E729E2FB1D415D6C00CFCDB8 /* Snow1.sks in Resources */ = {isa = PBXBuildFile; fileRef = E729E2F91D415D6C00CFCDB8 /* Snow1.sks */; };
 		E729E2FC1D415D6C00CFCDB8 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = E729E2FA1D415D6C00CFCDB8 /* spark.png */; };
 		E729E2FE1D415DA800CFCDB8 /* Snow2.sks in Resources */ = {isa = PBXBuildFile; fileRef = E729E2FD1D415DA800CFCDB8 /* Snow2.sks */; };
 		E729E3001D4177C000CFCDB8 /* SnowEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E729E2FF1D4177C000CFCDB8 /* SnowEmitter.swift */; };
-		E72C249A1D3ED94000987D34 /* GameOverScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72C24991D3ED94000987D34 /* GameOverScreen.swift */; };
+		E729E3021D41813000CFCDB8 /* Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E729E3011D41813000CFCDB8 /* Scroll.swift */; };
 		E72C249C1D3EED6F00987D34 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72C249B1D3EED6F00987D34 /* CGFloat+Extensions.swift */; };
 		E733039B1D3D8D5C002D7492 /* PlayingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733039A1D3D8D5C002D7492 /* PlayingState.swift */; };
 		E733039D1D3D8D62002D7492 /* ReadyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733039C1D3D8D62002D7492 /* ReadyState.swift */; };
@@ -55,12 +60,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E7227B601D42D67500147CA3 /* FinishScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishScreen.swift; sourceTree = "<group>"; };
+		E7227B621D42D6C500147CA3 /* RestartButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestartButton.swift; sourceTree = "<group>"; };
+		E7227B671D42DBE500147CA3 /* CancelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelButton.swift; sourceTree = "<group>"; };
+		E7227B691D42DC5100147CA3 /* FacebookButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookButton.swift; sourceTree = "<group>"; };
+		E7227B6B1D42DC7600147CA3 /* TwitterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterButton.swift; sourceTree = "<group>"; };
 		E729C0011D35889600F01D59 /* PhysicsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
 		E729E2F91D415D6C00CFCDB8 /* Snow1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow1.sks; sourceTree = "<group>"; };
 		E729E2FA1D415D6C00CFCDB8 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		E729E2FD1D415DA800CFCDB8 /* Snow2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow2.sks; sourceTree = "<group>"; };
 		E729E2FF1D4177C000CFCDB8 /* SnowEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnowEmitter.swift; sourceTree = "<group>"; };
-		E72C24991D3ED94000987D34 /* GameOverScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScreen.swift; sourceTree = "<group>"; };
+		E729E3011D41813000CFCDB8 /* Scroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scroll.swift; sourceTree = "<group>"; };
 		E72C249B1D3EED6F00987D34 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		E733039A1D3D8D5C002D7492 /* PlayingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingState.swift; sourceTree = "<group>"; };
 		E733039C1D3D8D62002D7492 /* ReadyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadyState.swift; sourceTree = "<group>"; };
@@ -116,6 +126,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E7227B641D42DB6E00147CA3 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				E7227B621D42D6C500147CA3 /* RestartButton.swift */,
+				E7227B671D42DBE500147CA3 /* CancelButton.swift */,
+				E7227B691D42DC5100147CA3 /* FacebookButton.swift */,
+				E7227B6B1D42DC7600147CA3 /* TwitterButton.swift */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
 		E73303A01D3D8D6D002D7492 /* Game States */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,7 +155,7 @@
 				E73303AB1D3E8D34002D7492 /* TitleScreen.swift */,
 				E7D42AD91D258242006C85B0 /* GameScene.sks */,
 				E7D42ADB1D258242006C85B0 /* GameScene.swift */,
-				E72C24991D3ED94000987D34 /* GameOverScreen.swift */,
+				E7227B601D42D67500147CA3 /* FinishScreen.swift */,
 			);
 			name = "Game Screens";
 			sourceTree = "<group>";
@@ -146,6 +167,7 @@
 				E72C249B1D3EED6F00987D34 /* CGFloat+Extensions.swift */,
 				E729C0011D35889600F01D59 /* PhysicsCategory.swift */,
 				E729E2FF1D4177C000CFCDB8 /* SnowEmitter.swift */,
+				E729E3011D41813000CFCDB8 /* Scroll.swift */,
 			);
 			name = "Helper Classes";
 			sourceTree = "<group>";
@@ -201,6 +223,7 @@
 				E7339F3E1D3D4B700060673B /* Game Elements */,
 				E7339F391D3D44160060673B /* Levels */,
 				E73303A01D3D8D6D002D7492 /* Game States */,
+				E7227B641D42DB6E00147CA3 /* Buttons */,
 				E73303A31D3E89CB002D7492 /* Game Screens */,
 				E7D42ADD1D258242006C85B0 /* GameViewController.swift */,
 				E7D42AE21D258242006C85B0 /* Assets.xcassets */,
@@ -369,17 +392,22 @@
 			files = (
 				E7339F3B1D3D454E0060673B /* LevelNode.swift in Sources */,
 				E72C249C1D3EED6F00987D34 /* CGFloat+Extensions.swift in Sources */,
+				E729E3021D41813000CFCDB8 /* Scroll.swift in Sources */,
 				E7C324D61D3407C5007B31E4 /* GrapplingHook.swift in Sources */,
 				E7D42ADC1D258242006C85B0 /* GameScene.swift in Sources */,
+				E7227B681D42DBE500147CA3 /* CancelButton.swift in Sources */,
+				E7227B611D42D67500147CA3 /* FinishScreen.swift in Sources */,
 				E73303A91D3E8CEF002D7492 /* MSButtonNode.swift in Sources */,
 				E7D42ADE1D258242006C85B0 /* GameViewController.swift in Sources */,
+				E7227B6C1D42DC7600147CA3 /* TwitterButton.swift in Sources */,
 				E729C0021D35889600F01D59 /* PhysicsCategory.swift in Sources */,
 				E733039F1D3D8D68002D7492 /* GameOverState.swift in Sources */,
 				E7D42AD81D258242006C85B0 /* AppDelegate.swift in Sources */,
+				E7227B631D42D6C500147CA3 /* RestartButton.swift in Sources */,
 				E733039B1D3D8D5C002D7492 /* PlayingState.swift in Sources */,
+				E7227B6A1D42DC5100147CA3 /* FacebookButton.swift in Sources */,
 				E73303A21D3E88D3002D7492 /* WinState.swift in Sources */,
 				E7D9808E1D27192B004B953B /* Hero.swift in Sources */,
-				E72C249A1D3ED94000987D34 /* GameOverScreen.swift in Sources */,
 				E729E3001D4177C000CFCDB8 /* SnowEmitter.swift in Sources */,
 				E733039D1D3D8D62002D7492 /* ReadyState.swift in Sources */,
 				E73303AC1D3E8D34002D7492 /* TitleScreen.swift in Sources */,

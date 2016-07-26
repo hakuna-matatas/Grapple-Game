@@ -27,6 +27,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var ground: SKSpriteNode!
     var water1: SKSpriteNode!
     var water2: SKSpriteNode!
+    var iceberg: SKSpriteNode!
     var cloud1: SKSpriteNode!
     var cloud2: SKSpriteNode!
     var sky: SKSpriteNode!
@@ -37,13 +38,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var hero: Hero!
     var grapplingHook: GrapplingHook!
     var grapplingHookMadeContact = false
+    var oldCameraPositionRelativeToScene = CGPoint(x: 333.5, y: 0)
     
-    /* Used to scroll the water across the world */
+    /* Used to scroll things across the world */
     var waterScrollNode: SKNode!
-    let waterScrollSpeed: CGFloat = 5.0
     
     let STATIONARY_TEXTURE = SKTexture(imageNamed: "Stationary Penguin")
-    let FLYING_TEXTURE = SKTexture(imageNamed: "Flying-1")
+    let FLYING_TEXTURE = SKTexture(imageNamed: "Flying")
     
     
     override func didMoveToView(view: SKView) {
@@ -113,14 +114,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             hero.texture = STATIONARY_TEXTURE
         }
         
-        scrollWater()
-        
         /* Hero dies if he falls below screen */
         if(hero.position.y < 0) { gameState.enterState(GameOverState) }
         
         let timePassed = currentTime - lastUpdateTime
         lastUpdateTime = currentTime
         gameState.updateWithDeltaTime(timePassed)
+        
+        Scroll.scrollWater(self)
+        Scroll.scrollIceberg(self, oldCameraPositionRelativeToScene: oldCameraPositionRelativeToScene)
+        
+        oldCameraPositionRelativeToScene = camera!.convertPoint(camera!.position, toNode: self)
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
@@ -178,26 +182,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         hero.physicsBody!.applyImpulse(CGVector(dx: 5, dy: 0))
     }
     
-    func scrollWater() {
-        waterScrollNode.position.x -= waterScrollSpeed
-        
-        for water in waterScrollNode.children as! [SKSpriteNode] {
-            let waterPosition = waterScrollNode.convertPoint(water.position, toNode: camera!)
-            
-            if(waterPosition.x <= -water.size.width) {
-                /* In the case that waterPosition.x < -water.size.width, there will be a slight
-                   gap between the two water sprites. difference accounts for this gap */
-                let difference = waterPosition.x - (-water.size.width)
-                let newPosition = CGPoint(x: water.size.width + difference, y: waterPosition.y)
-                water.position = camera!.convertPoint(newPosition, toNode: waterScrollNode)
-            }
-        }
-    }
-    
     func initializeVars() {
         ground = self.childNodeWithName("ground") as! SKSpriteNode
         water1 = self.childNodeWithName("//water1") as! SKSpriteNode
         water2 = self.childNodeWithName("//water2") as! SKSpriteNode
+        iceberg = self.childNodeWithName("//iceberg") as! SKSpriteNode
         cloud1 = self.childNodeWithName("cloud1") as! SKSpriteNode
         cloud2 = self.childNodeWithName("cloud2") as! SKSpriteNode
         sky = self.childNodeWithName("sky") as! SKSpriteNode

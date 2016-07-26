@@ -8,8 +8,7 @@
 
 import SpriteKit
 
-class SnowEmitter: SKEmitterNode {
-    
+class SnowEmitter {
     
     static func createEmitter(emitterName: String, emitterPosition: CGPoint) -> SKEmitterNode {
         let NUM_PARTICLES_TO_EMIT = 5

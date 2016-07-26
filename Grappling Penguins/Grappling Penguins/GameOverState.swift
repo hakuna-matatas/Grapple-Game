@@ -11,10 +11,11 @@ import SpriteKit
 
 class GameOverState: GKState {    
     unowned let scene: GameScene
-    let gameoverOverlay = GameOverScreen()
+    let gameoverOverlay = FinishScreen()
     
     init(scene: GameScene) {
         self.scene = scene
+        gameoverOverlay.makeLoseScreen()
     }
     
     override func didEnterWithPreviousState(previousState: GKState?) {

@@ -43,13 +43,9 @@ class MSButtonNode: SKSpriteNode {
         }
     }
     
-    
-    
     init(imageNamed: String) {
-        
         let texture = SKTexture(imageNamed: imageNamed)
         super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
-        
     }
     
     
