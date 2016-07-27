@@ -29,6 +29,7 @@
 		E7339F381D3D440C0060673B /* Tutorial.sks in Resources */ = {isa = PBXBuildFile; fileRef = E7339F371D3D440C0060673B /* Tutorial.sks */; };
 		E7339F3B1D3D454E0060673B /* LevelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7339F3A1D3D454E0060673B /* LevelNode.swift */; };
 		E7C324D61D3407C5007B31E4 /* GrapplingHook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C324D51D3407C5007B31E4 /* GrapplingHook.swift */; };
+		E7CEFE051D492A0A0056CD32 /* AGENTORANGE.TTF in Resources */ = {isa = PBXBuildFile; fileRef = E7CEFE041D492A0A0056CD32 /* AGENTORANGE.TTF */; };
 		E7D42AD81D258242006C85B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D42AD71D258242006C85B0 /* AppDelegate.swift */; };
 		E7D42ADA1D258242006C85B0 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E7D42AD91D258242006C85B0 /* GameScene.sks */; };
 		E7D42ADC1D258242006C85B0 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D42ADB1D258242006C85B0 /* GameScene.swift */; };
@@ -82,6 +83,7 @@
 		E7339F371D3D440C0060673B /* Tutorial.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tutorial.sks; sourceTree = "<group>"; };
 		E7339F3A1D3D454E0060673B /* LevelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelNode.swift; sourceTree = "<group>"; };
 		E7C324D51D3407C5007B31E4 /* GrapplingHook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrapplingHook.swift; sourceTree = "<group>"; };
+		E7CEFE041D492A0A0056CD32 /* AGENTORANGE.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = AGENTORANGE.TTF; sourceTree = "<group>"; };
 		E7D42AD41D258242006C85B0 /* Grappling Penguins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grappling Penguins.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7D42AD71D258242006C85B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7D42AD91D258242006C85B0 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				E73303A31D3E89CB002D7492 /* Game Screens */,
 				E7D42ADD1D258242006C85B0 /* GameViewController.swift */,
 				E7D42AE21D258242006C85B0 /* Assets.xcassets */,
+				E7CEFE041D492A0A0056CD32 /* AGENTORANGE.TTF */,
 				E7D42AE41D258242006C85B0 /* LaunchScreen.storyboard */,
 				E7D42AE71D258242006C85B0 /* Info.plist */,
 			);
@@ -357,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7D42ADA1D258242006C85B0 /* GameScene.sks in Resources */,
+				E7CEFE051D492A0A0056CD32 /* AGENTORANGE.TTF in Resources */,
 				E729E2FE1D415DA800CFCDB8 /* Snow2.sks in Resources */,
 				E7D42AE61D258242006C85B0 /* LaunchScreen.storyboard in Resources */,
 				E7D42AE31D258242006C85B0 /* Assets.xcassets in Resources */,

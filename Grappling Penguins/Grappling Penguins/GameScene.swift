@@ -28,12 +28,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var water1: SKSpriteNode!
     var water2: SKSpriteNode!
     var iceberg: SKSpriteNode!
-    var cloud1: SKSpriteNode!
-    var cloud2: SKSpriteNode!
     var sky: SKSpriteNode!
     
-    /* Each level is loaded into the level node. See class for more details */
-    var levelNode = LevelNode()
+    /* An array of all the instantiated clouds */
+    var cloudArray = [SKSpriteNode]()
 
     var hero: Hero!
     var grapplingHook: GrapplingHook!
@@ -46,12 +44,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let STATIONARY_TEXTURE = SKTexture(imageNamed: "Stationary Penguin")
     let FLYING_TEXTURE = SKTexture(imageNamed: "Flying")
     
+    let CLOUD_WIDTH: CGFloat = 126.0
+    var distanceBwClouds: CGFloat = 0
+    
+    var distanceTravelled: Int = 0 {
+        didSet {
+            distanceTravelledLabel.text = String(distanceTravelled)
+        }
+    }
+    var distanceTravelledLabel: SKLabelNode!
+    
     
     override func didMoveToView(view: SKView) {
         initializeVars()
         setupPhysics()
-        
-        levelNode.loadLevel()
+        addClouds(2)
         
         readyState = ReadyState(scene: self)
         playingState = PlayingState(scene: self)
@@ -110,6 +117,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func update(currentTime: CFTimeInterval) {
+        distanceTravelled = Int(self.hero.position.x)/100
+        
+        let spaceBwCloudAndScreen = (self.camera!.position.x + 1.5*667) - cloudArray.last!.position.x
+        
+        if(spaceBwCloudAndScreen > CLOUD_WIDTH + distanceBwClouds) {
+            let numCloudsToAdd = Int(spaceBwCloudAndScreen/(CLOUD_WIDTH + distanceBwClouds))
+            addClouds(numCloudsToAdd)
+        }
+        
+        /* Removing clouds we have passed */
+        for cloud in cloudArray {
+            if(cloud.position.x < self.camera!.position.x - 400.5) {
+                cloud.removeFromParent()
+                cloudArray.removeAtIndex(cloudArray.indexOf(cloud)!)
+            }
+        }
+        
         if(hero.physicsBody?.velocity.dx == 0) {
             hero.texture = STATIONARY_TEXTURE
         }
@@ -178,6 +202,34 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    func addClouds(numberOfClouds: Int) {
+        var xCoor = cloudArray.last?.position.x ?? 207.5
+        xCoor += CLOUD_WIDTH
+        
+        for _ in 0...numberOfClouds {
+            let cloud = SKSpriteNode(imageNamed: "Cloud.png")
+            cloud.physicsBody = SKPhysicsBody(texture: cloud.texture!, size: cloud.size)
+            
+            cloud.physicsBody?.categoryBitMask = PhysicsCategory.Cloud
+            cloud.physicsBody?.collisionBitMask = PhysicsCategory.None
+            cloud.physicsBody?.contactTestBitMask = PhysicsCategory.GrapplingHook
+            
+            cloud.physicsBody?.dynamic = false
+            cloud.physicsBody?.affectedByGravity = false
+            cloud.physicsBody?.allowsRotation = false
+            
+            self.addChild(cloud)
+            
+            let randYCoor = CGFloat(arc4random_uniform(70) + 305)
+            
+            let cloudPosition = CGPoint(x: xCoor, y: randYCoor)
+            cloud.position = cloudPosition
+            cloudArray.append(cloud)
+            
+            xCoor += CLOUD_WIDTH
+        }
+    }
+    
     func boostXVelocity() {
         hero.physicsBody!.applyImpulse(CGVector(dx: 5, dy: 0))
     }
@@ -187,12 +239,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         water1 = self.childNodeWithName("//water1") as! SKSpriteNode
         water2 = self.childNodeWithName("//water2") as! SKSpriteNode
         iceberg = self.childNodeWithName("//iceberg") as! SKSpriteNode
-        cloud1 = self.childNodeWithName("cloud1") as! SKSpriteNode
-        cloud2 = self.childNodeWithName("cloud2") as! SKSpriteNode
-        sky = self.childNodeWithName("sky") as! SKSpriteNode
+        sky = self.childNodeWithName("//sky") as! SKSpriteNode
         waterScrollNode = self.childNodeWithName("waterScrollNode")
         hero = self.childNodeWithName("hero") as! Hero
-        self.addChild(levelNode)
+        distanceTravelledLabel = self.childNodeWithName("//distanceTravelledLabel") as! SKLabelNode
+       // distanceTravelledLabel.fontName = "Agent Orange"
     }
     
     func setupPhysics() {
@@ -207,13 +258,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ground.physicsBody?.collisionBitMask = PhysicsCategory.Hero
         ground.physicsBody?.contactTestBitMask = PhysicsCategory.None
         
-        cloud1.physicsBody?.categoryBitMask = PhysicsCategory.Cloud
-        cloud1.physicsBody?.collisionBitMask = PhysicsCategory.Hero
-        cloud1.physicsBody?.contactTestBitMask = PhysicsCategory.GrapplingHook
-        
-        cloud2.physicsBody?.categoryBitMask = PhysicsCategory.Cloud
-        cloud2.physicsBody?.collisionBitMask = PhysicsCategory.Hero
-        cloud2.physicsBody?.contactTestBitMask = PhysicsCategory.GrapplingHook
     }
 }
 

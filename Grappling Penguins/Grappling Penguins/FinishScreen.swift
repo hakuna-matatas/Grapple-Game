@@ -9,6 +9,7 @@
 import SpriteKit
 
 class FinishScreen: SKNode {
+    var percentageCompleteLabel = SKLabelNode()
     
     override init() {
         super.init()
@@ -31,32 +32,15 @@ class FinishScreen: SKNode {
         twitterButton.position = CGPoint(x: -200, y: -65)
         twitterButton.zPosition = 31
         self.addChild(twitterButton)
-    }
-    
-    func makeWinScreen() {
-        let nextLevelButton = MSButtonNode(imageNamed: "Next Button")
-        nextLevelButton.state = .MSButtonNodeStateActive
-        nextLevelButton.position.x += 175
-        nextLevelButton.zPosition = 31
-        self.addChild(nextLevelButton)
         
-        let congratsLabel = SKSpriteNode(imageNamed: "Congrats Babe")
-        congratsLabel.position.x = -25
-        congratsLabel.zPosition = 31
-        self.addChild(congratsLabel)
-    }
-    
-    func makeLoseScreen() {
         let restartButton = RestartButton()
         restartButton.position.x += 175
         restartButton.zPosition = 31
         self.addChild(restartButton)
         
-        let percentageCompleteLabel = SKLabelNode()
-        percentageCompleteLabel.text = "32%"
         percentageCompleteLabel.fontSize = 80
-        percentageCompleteLabel.fontName = "Agent Orange-Bold"
-        percentageCompleteLabel.position.x = -50
+        percentageCompleteLabel.fontName = "Agent Orange"
+        percentageCompleteLabel.position = CGPoint(x: -50, y: -20)
         percentageCompleteLabel.zPosition = 31
         self.addChild(percentageCompleteLabel)
     }

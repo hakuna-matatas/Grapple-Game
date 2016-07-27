@@ -15,12 +15,14 @@ class GameOverState: GKState {
     
     init(scene: GameScene) {
         self.scene = scene
-        gameoverOverlay.makeLoseScreen()
     }
     
     override func didEnterWithPreviousState(previousState: GKState?) {
         scene.physicsWorld.removeAllJoints()
         scene.hero.physicsBody!.velocity.dx = 0
+        
+        self.gameoverOverlay.percentageCompleteLabel.text = scene.distanceTravelledLabel.text
+        scene.distanceTravelledLabel.removeFromParent()
         
         if(gameoverOverlay.parent == nil) {
             /* Moves the gameoverOverlay onscreen */
