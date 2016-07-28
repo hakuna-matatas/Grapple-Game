@@ -26,7 +26,7 @@ class Hero: SKSpriteNode {
     func setupPhysics() {
         if let physBody = self.physicsBody {
             physBody.categoryBitMask = PhysicsCategory.Hero
-            physBody.collisionBitMask = PhysicsCategory.Ground
+            physBody.collisionBitMask = PhysicsCategory.Ground | PhysicsCategory.Cloud
             physBody.contactTestBitMask = PhysicsCategory.None
             
             physBody.dynamic = true

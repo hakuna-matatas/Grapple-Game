@@ -263,7 +263,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func setupPhysics() {
         /* This function changes the gravity of the world, gives
          all relevant nodes physics bodies, and creates a contactDelegate */
-        self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: -3)
         physicsWorld.contactDelegate = self
         
         hero.setupPhysics()

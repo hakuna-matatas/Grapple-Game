@@ -6,16 +6,7 @@ target 'Grappling Penguins' do
   use_frameworks!
 
   # Pods for Grappling Penguins
-    pod 'Firebase/Core'
-
-  target 'Grappling PenguinsTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'Grappling PenguinsUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+    pod 'Firebase'
+    pod 'Firebase/Database'
 
 end
