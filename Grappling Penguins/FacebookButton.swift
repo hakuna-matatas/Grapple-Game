@@ -7,14 +7,17 @@
 //
 
 import SpriteKit
+import FBSDKShareKit
+import FBSDKCoreKit
+import Social
 
 class FacebookButton: MSButtonNode {
     init() {
         super.init(imageNamed: "Facebook Button")
         self.state = .MSButtonNodeStateActive
-        
+
         self.selectedHandler = {
-            
+            NSNotificationCenter.defaultCenter().postNotificationName("showFBSheet", object: nil)
         }
     }
     

@@ -8,5 +8,8 @@ target 'Grappling Penguins' do
   # Pods for Grappling Penguins
     pod 'Firebase'
     pod 'Firebase/Database'
+    pod 'FBSDKCoreKit'
+    pod 'FBSDKShareKit'
+    pod 'FBSDKLoginKit'
 
 end

@@ -9,7 +9,8 @@
 import SpriteKit
 
 class FinishScreen: SKNode {
-    var percentageCompleteLabel = SKLabelNode()
+    var distanceTravelledLabel = SKLabelNode()
+    var highScoreLabel = SKLabelNode()
     
     override init() {
         super.init()
@@ -38,11 +39,17 @@ class FinishScreen: SKNode {
         restartButton.zPosition = 31
         self.addChild(restartButton)
         
-        percentageCompleteLabel.fontSize = 80
-        percentageCompleteLabel.fontName = "Agent Orange"
-        percentageCompleteLabel.position = CGPoint(x: -50, y: -20)
-        percentageCompleteLabel.zPosition = 31
-        self.addChild(percentageCompleteLabel)
+        distanceTravelledLabel.fontSize = 30
+        distanceTravelledLabel.fontName = "Agent Orange"
+        distanceTravelledLabel.position = CGPoint(x: -20, y: 5)
+        distanceTravelledLabel.zPosition = 31
+        self.addChild(distanceTravelledLabel)
+        
+        highScoreLabel.fontSize = 15
+        highScoreLabel.fontName = "Agent Orange"
+        highScoreLabel.position = CGPoint(x: -20, y: -25)
+        highScoreLabel.zPosition = 31
+        self.addChild(highScoreLabel)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -53,6 +53,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     var distanceTravelledLabel: SKLabelNode!
+    var highScore = 0
+    let userDefaults = NSUserDefaults.standardUserDefaults()
     
     
     override func didMoveToView(view: SKView) {
@@ -67,6 +69,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         gameState = GKStateMachine(states: [readyState, playingState, gameOverState, winState])
         gameState.enterState(ReadyState)
+        
+        if(userDefaults.valueForKey("HighScore") != nil) {
+            self.highScore = userDefaults.valueForKey("HighScore") as! Int
+        }
     }
     
     
