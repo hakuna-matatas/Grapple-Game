@@ -7,33 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E7227B611D42D67500147CA3 /* FinishScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7227B601D42D67500147CA3 /* FinishScreen.swift */; };
-		E7227B631D42D6C500147CA3 /* RestartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7227B621D42D6C500147CA3 /* RestartButton.swift */; };
-		E7227B681D42DBE500147CA3 /* CancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7227B671D42DBE500147CA3 /* CancelButton.swift */; };
-		E7227B6A1D42DC5100147CA3 /* FacebookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7227B691D42DC5100147CA3 /* FacebookButton.swift */; };
-		E7227B6C1D42DC7600147CA3 /* TwitterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7227B6B1D42DC7600147CA3 /* TwitterButton.swift */; };
-		E729C0021D35889600F01D59 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E729C0011D35889600F01D59 /* PhysicsCategory.swift */; };
-		E729E2FB1D415D6C00CFCDB8 /* Snow1.sks in Resources */ = {isa = PBXBuildFile; fileRef = E729E2F91D415D6C00CFCDB8 /* Snow1.sks */; };
-		E729E2FE1D415DA800CFCDB8 /* Snow2.sks in Resources */ = {isa = PBXBuildFile; fileRef = E729E2FD1D415DA800CFCDB8 /* Snow2.sks */; };
-		E729E3021D41813000CFCDB8 /* Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E729E3011D41813000CFCDB8 /* Scroll.swift */; };
-		E72C249C1D3EED6F00987D34 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72C249B1D3EED6F00987D34 /* CGFloat+Extensions.swift */; };
-		E733039B1D3D8D5C002D7492 /* PlayingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733039A1D3D8D5C002D7492 /* PlayingState.swift */; };
-		E733039D1D3D8D62002D7492 /* ReadyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733039C1D3D8D62002D7492 /* ReadyState.swift */; };
-		E733039F1D3D8D68002D7492 /* GameOverState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733039E1D3D8D68002D7492 /* GameOverState.swift */; };
-		E73303A71D3E8A31002D7492 /* TitleScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = E73303A61D3E8A31002D7492 /* TitleScreen.sks */; };
-		E73303A91D3E8CEF002D7492 /* MSButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73303A81D3E8CEF002D7492 /* MSButtonNode.swift */; };
-		E73303AC1D3E8D34002D7492 /* TitleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73303AB1D3E8D34002D7492 /* TitleScreen.swift */; };
-		E77B76BD1D4C003D0007ED3A /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77B76BC1D4C003D0007ED3A /* Numbers.swift */; };
-		E7C324D61D3407C5007B31E4 /* GrapplingHook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C324D51D3407C5007B31E4 /* GrapplingHook.swift */; };
+		E74F4C231D6CE80000AD1471 /* GrapplingHook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F4C1F1D6CE80000AD1471 /* GrapplingHook.swift */; };
+		E74F4C241D6CE80000AD1471 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F4C201D6CE80000AD1471 /* Hero.swift */; };
+		E74F4C251D6CE80000AD1471 /* Snow1.sks in Resources */ = {isa = PBXBuildFile; fileRef = E74F4C211D6CE80000AD1471 /* Snow1.sks */; };
+		E74F4C261D6CE80000AD1471 /* Snow2.sks in Resources */ = {isa = PBXBuildFile; fileRef = E74F4C221D6CE80000AD1471 /* Snow2.sks */; };
+		E74F4C2B1D6CE82300AD1471 /* CancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F4C271D6CE82300AD1471 /* CancelButton.swift */; };
+		E74F4C2C1D6CE82300AD1471 /* FacebookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F4C281D6CE82300AD1471 /* FacebookButton.swift */; };
+		E74F4C2D1D6CE82300AD1471 /* RestartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F4C291D6CE82300AD1471 /* RestartButton.swift */; };
+		E74F4C2E1D6CE82300AD1471 /* TwitterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F4C2A1D6CE82300AD1471 /* TwitterButton.swift */; };
+		E74F4C341D6CE84E00AD1471 /* FinishScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F4C2F1D6CE84E00AD1471 /* FinishScreen.swift */; };
+		E74F4C351D6CE84E00AD1471 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E74F4C301D6CE84E00AD1471 /* GameScene.sks */; };
+		E74F4C361D6CE84E00AD1471 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F4C311D6CE84E00AD1471 /* GameScene.swift */; };
+		E74F4C371D6CE84E00AD1471 /* TitleScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = E74F4C321D6CE84E00AD1471 /* TitleScreen.sks */; };
+		E74F4C381D6CE84E00AD1471 /* TitleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F4C331D6CE84E00AD1471 /* TitleScreen.swift */; };
+		E74F4C3E1D6CE86F00AD1471 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F4C391D6CE86E00AD1471 /* CGFloat+Extensions.swift */; };
+		E74F4C3F1D6CE86F00AD1471 /* MSButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F4C3A1D6CE86E00AD1471 /* MSButtonNode.swift */; };
+		E74F4C401D6CE86F00AD1471 /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F4C3B1D6CE86E00AD1471 /* Numbers.swift */; };
+		E74F4C411D6CE86F00AD1471 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F4C3C1D6CE86F00AD1471 /* PhysicsCategory.swift */; };
+		E74F4C421D6CE86F00AD1471 /* Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F4C3D1D6CE86F00AD1471 /* Scroll.swift */; };
+		E74F4C461D6CE88300AD1471 /* GameOverState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F4C431D6CE88300AD1471 /* GameOverState.swift */; };
+		E74F4C471D6CE88300AD1471 /* PlayingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F4C441D6CE88300AD1471 /* PlayingState.swift */; };
+		E74F4C481D6CE88300AD1471 /* ReadyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74F4C451D6CE88300AD1471 /* ReadyState.swift */; };
 		E7CEFE051D492A0A0056CD32 /* AGENTORANGE.TTF in Resources */ = {isa = PBXBuildFile; fileRef = E7CEFE041D492A0A0056CD32 /* AGENTORANGE.TTF */; };
 		E7D42AD81D258242006C85B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D42AD71D258242006C85B0 /* AppDelegate.swift */; };
-		E7D42ADA1D258242006C85B0 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E7D42AD91D258242006C85B0 /* GameScene.sks */; };
-		E7D42ADC1D258242006C85B0 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D42ADB1D258242006C85B0 /* GameScene.swift */; };
 		E7D42ADE1D258242006C85B0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D42ADD1D258242006C85B0 /* GameViewController.swift */; };
 		E7D42AE11D258242006C85B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D42ADF1D258242006C85B0 /* Main.storyboard */; };
 		E7D42AE31D258242006C85B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7D42AE21D258242006C85B0 /* Assets.xcassets */; };
 		E7D42AE61D258242006C85B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D42AE41D258242006C85B0 /* LaunchScreen.storyboard */; };
-		E7D9808E1D27192B004B953B /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D9808D1D27192B004B953B /* Hero.swift */; };
 		E7E4B7F61D49D92A00949DCC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7E4B7F51D49D92A00949DCC /* GoogleService-Info.plist */; };
 		E7E4B7FA1D49DDD300949DCC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E4B7F71D49DDD300949DCC /* FBSDKCoreKit.framework */; };
 		E7E4B7FB1D49DDD300949DCC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E4B7F81D49DDD300949DCC /* FBSDKLoginKit.framework */; };
@@ -45,35 +45,35 @@
 		22DE72FFA322CCE96289212B /* Pods-Grappling Penguins.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grappling Penguins.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Grappling Penguins/Pods-Grappling Penguins.debug.xcconfig"; sourceTree = "<group>"; };
 		457731E89686446143E5A54D /* Pods-Grappling Penguins.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grappling Penguins.release.xcconfig"; path = "Pods/Target Support Files/Pods-Grappling Penguins/Pods-Grappling Penguins.release.xcconfig"; sourceTree = "<group>"; };
 		DAD7962A5E140B76F8E8AC1E /* Pods_Grappling_Penguins.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Grappling_Penguins.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7227B601D42D67500147CA3 /* FinishScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishScreen.swift; sourceTree = "<group>"; };
-		E7227B621D42D6C500147CA3 /* RestartButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestartButton.swift; sourceTree = "<group>"; };
-		E7227B671D42DBE500147CA3 /* CancelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelButton.swift; sourceTree = "<group>"; };
-		E7227B691D42DC5100147CA3 /* FacebookButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookButton.swift; sourceTree = "<group>"; };
-		E7227B6B1D42DC7600147CA3 /* TwitterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterButton.swift; sourceTree = "<group>"; };
-		E729C0011D35889600F01D59 /* PhysicsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
-		E729E2F91D415D6C00CFCDB8 /* Snow1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow1.sks; sourceTree = "<group>"; };
-		E729E2FD1D415DA800CFCDB8 /* Snow2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow2.sks; sourceTree = "<group>"; };
-		E729E3011D41813000CFCDB8 /* Scroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scroll.swift; sourceTree = "<group>"; };
-		E72C249B1D3EED6F00987D34 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
-		E733039A1D3D8D5C002D7492 /* PlayingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingState.swift; sourceTree = "<group>"; };
-		E733039C1D3D8D62002D7492 /* ReadyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadyState.swift; sourceTree = "<group>"; };
-		E733039E1D3D8D68002D7492 /* GameOverState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverState.swift; sourceTree = "<group>"; };
-		E73303A61D3E8A31002D7492 /* TitleScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TitleScreen.sks; sourceTree = "<group>"; };
-		E73303A81D3E8CEF002D7492 /* MSButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSButtonNode.swift; sourceTree = "<group>"; };
-		E73303AB1D3E8D34002D7492 /* TitleScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleScreen.swift; sourceTree = "<group>"; };
-		E77B76BC1D4C003D0007ED3A /* Numbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Numbers.swift; sourceTree = "<group>"; };
-		E7C324D51D3407C5007B31E4 /* GrapplingHook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrapplingHook.swift; sourceTree = "<group>"; };
+		E74F4C1F1D6CE80000AD1471 /* GrapplingHook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GrapplingHook.swift; path = "Game Elements/GrapplingHook.swift"; sourceTree = "<group>"; };
+		E74F4C201D6CE80000AD1471 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hero.swift; path = "Game Elements/Hero.swift"; sourceTree = "<group>"; };
+		E74F4C211D6CE80000AD1471 /* Snow1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Snow1.sks; path = "Game Elements/Snow1.sks"; sourceTree = "<group>"; };
+		E74F4C221D6CE80000AD1471 /* Snow2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Snow2.sks; path = "Game Elements/Snow2.sks"; sourceTree = "<group>"; };
+		E74F4C271D6CE82300AD1471 /* CancelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CancelButton.swift; path = Buttons/CancelButton.swift; sourceTree = "<group>"; };
+		E74F4C281D6CE82300AD1471 /* FacebookButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookButton.swift; path = Buttons/FacebookButton.swift; sourceTree = "<group>"; };
+		E74F4C291D6CE82300AD1471 /* RestartButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestartButton.swift; path = Buttons/RestartButton.swift; sourceTree = "<group>"; };
+		E74F4C2A1D6CE82300AD1471 /* TwitterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TwitterButton.swift; path = Buttons/TwitterButton.swift; sourceTree = "<group>"; };
+		E74F4C2F1D6CE84E00AD1471 /* FinishScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinishScreen.swift; path = "Game Screens/FinishScreen.swift"; sourceTree = "<group>"; };
+		E74F4C301D6CE84E00AD1471 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = GameScene.sks; path = "Game Screens/GameScene.sks"; sourceTree = "<group>"; };
+		E74F4C311D6CE84E00AD1471 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = "Game Screens/GameScene.swift"; sourceTree = "<group>"; };
+		E74F4C321D6CE84E00AD1471 /* TitleScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = TitleScreen.sks; path = "Game Screens/TitleScreen.sks"; sourceTree = "<group>"; };
+		E74F4C331D6CE84E00AD1471 /* TitleScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitleScreen.swift; path = "Game Screens/TitleScreen.swift"; sourceTree = "<group>"; };
+		E74F4C391D6CE86E00AD1471 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CGFloat+Extensions.swift"; path = "Helper Classes/CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		E74F4C3A1D6CE86E00AD1471 /* MSButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MSButtonNode.swift; path = "Helper Classes/MSButtonNode.swift"; sourceTree = "<group>"; };
+		E74F4C3B1D6CE86E00AD1471 /* Numbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Numbers.swift; path = "Helper Classes/Numbers.swift"; sourceTree = "<group>"; };
+		E74F4C3C1D6CE86F00AD1471 /* PhysicsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhysicsCategory.swift; path = "Helper Classes/PhysicsCategory.swift"; sourceTree = "<group>"; };
+		E74F4C3D1D6CE86F00AD1471 /* Scroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scroll.swift; path = "Helper Classes/Scroll.swift"; sourceTree = "<group>"; };
+		E74F4C431D6CE88300AD1471 /* GameOverState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameOverState.swift; path = "Game States/GameOverState.swift"; sourceTree = "<group>"; };
+		E74F4C441D6CE88300AD1471 /* PlayingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayingState.swift; path = "Game States/PlayingState.swift"; sourceTree = "<group>"; };
+		E74F4C451D6CE88300AD1471 /* ReadyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReadyState.swift; path = "Game States/ReadyState.swift"; sourceTree = "<group>"; };
 		E7CEFE041D492A0A0056CD32 /* AGENTORANGE.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = AGENTORANGE.TTF; sourceTree = "<group>"; };
 		E7D42AD41D258242006C85B0 /* Grappling Penguins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grappling Penguins.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7D42AD71D258242006C85B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E7D42AD91D258242006C85B0 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		E7D42ADB1D258242006C85B0 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		E7D42ADD1D258242006C85B0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		E7D42AE01D258242006C85B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7D42AE21D258242006C85B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7D42AE51D258242006C85B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7D42AE71D258242006C85B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E7D9808D1D27192B004B953B /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		E7E4B7F51D49D92A00949DCC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7E4B7F71D49DDD300949DCC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		E7E4B7F81D49DDD300949DCC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -118,10 +118,10 @@
 		E7227B641D42DB6E00147CA3 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				E7227B621D42D6C500147CA3 /* RestartButton.swift */,
-				E7227B671D42DBE500147CA3 /* CancelButton.swift */,
-				E7227B691D42DC5100147CA3 /* FacebookButton.swift */,
-				E7227B6B1D42DC7600147CA3 /* TwitterButton.swift */,
+				E74F4C271D6CE82300AD1471 /* CancelButton.swift */,
+				E74F4C281D6CE82300AD1471 /* FacebookButton.swift */,
+				E74F4C291D6CE82300AD1471 /* RestartButton.swift */,
+				E74F4C2A1D6CE82300AD1471 /* TwitterButton.swift */,
 			);
 			name = Buttons;
 			sourceTree = "<group>";
@@ -129,9 +129,9 @@
 		E73303A01D3D8D6D002D7492 /* Game States */ = {
 			isa = PBXGroup;
 			children = (
-				E733039C1D3D8D62002D7492 /* ReadyState.swift */,
-				E733039A1D3D8D5C002D7492 /* PlayingState.swift */,
-				E733039E1D3D8D68002D7492 /* GameOverState.swift */,
+				E74F4C431D6CE88300AD1471 /* GameOverState.swift */,
+				E74F4C441D6CE88300AD1471 /* PlayingState.swift */,
+				E74F4C451D6CE88300AD1471 /* ReadyState.swift */,
 			);
 			name = "Game States";
 			sourceTree = "<group>";
@@ -139,11 +139,11 @@
 		E73303A31D3E89CB002D7492 /* Game Screens */ = {
 			isa = PBXGroup;
 			children = (
-				E73303A61D3E8A31002D7492 /* TitleScreen.sks */,
-				E73303AB1D3E8D34002D7492 /* TitleScreen.swift */,
-				E7D42AD91D258242006C85B0 /* GameScene.sks */,
-				E7D42ADB1D258242006C85B0 /* GameScene.swift */,
-				E7227B601D42D67500147CA3 /* FinishScreen.swift */,
+				E74F4C2F1D6CE84E00AD1471 /* FinishScreen.swift */,
+				E74F4C301D6CE84E00AD1471 /* GameScene.sks */,
+				E74F4C311D6CE84E00AD1471 /* GameScene.swift */,
+				E74F4C321D6CE84E00AD1471 /* TitleScreen.sks */,
+				E74F4C331D6CE84E00AD1471 /* TitleScreen.swift */,
 			);
 			name = "Game Screens";
 			sourceTree = "<group>";
@@ -151,11 +151,11 @@
 		E73303AA1D3E8CFC002D7492 /* Helper Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E73303A81D3E8CEF002D7492 /* MSButtonNode.swift */,
-				E72C249B1D3EED6F00987D34 /* CGFloat+Extensions.swift */,
-				E729C0011D35889600F01D59 /* PhysicsCategory.swift */,
-				E729E3011D41813000CFCDB8 /* Scroll.swift */,
-				E77B76BC1D4C003D0007ED3A /* Numbers.swift */,
+				E74F4C391D6CE86E00AD1471 /* CGFloat+Extensions.swift */,
+				E74F4C3A1D6CE86E00AD1471 /* MSButtonNode.swift */,
+				E74F4C3B1D6CE86E00AD1471 /* Numbers.swift */,
+				E74F4C3C1D6CE86F00AD1471 /* PhysicsCategory.swift */,
+				E74F4C3D1D6CE86F00AD1471 /* Scroll.swift */,
 			);
 			name = "Helper Classes";
 			sourceTree = "<group>";
@@ -163,10 +163,10 @@
 		E7339F3E1D3D4B700060673B /* Game Elements */ = {
 			isa = PBXGroup;
 			children = (
-				E7D9808D1D27192B004B953B /* Hero.swift */,
-				E7C324D51D3407C5007B31E4 /* GrapplingHook.swift */,
-				E729E2F91D415D6C00CFCDB8 /* Snow1.sks */,
-				E729E2FD1D415DA800CFCDB8 /* Snow2.sks */,
+				E74F4C1F1D6CE80000AD1471 /* GrapplingHook.swift */,
+				E74F4C201D6CE80000AD1471 /* Hero.swift */,
+				E74F4C211D6CE80000AD1471 /* Snow1.sks */,
+				E74F4C221D6CE80000AD1471 /* Snow2.sks */,
 			);
 			name = "Game Elements";
 			sourceTree = "<group>";
@@ -271,15 +271,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7D42ADA1D258242006C85B0 /* GameScene.sks in Resources */,
+				E74F4C261D6CE80000AD1471 /* Snow2.sks in Resources */,
 				E7CEFE051D492A0A0056CD32 /* AGENTORANGE.TTF in Resources */,
-				E729E2FE1D415DA800CFCDB8 /* Snow2.sks in Resources */,
+				E74F4C251D6CE80000AD1471 /* Snow1.sks in Resources */,
 				E7D42AE61D258242006C85B0 /* LaunchScreen.storyboard in Resources */,
+				E74F4C371D6CE84E00AD1471 /* TitleScreen.sks in Resources */,
 				E7D42AE31D258242006C85B0 /* Assets.xcassets in Resources */,
+				E74F4C351D6CE84E00AD1471 /* GameScene.sks in Resources */,
 				E7E4B7F61D49D92A00949DCC /* GoogleService-Info.plist in Resources */,
-				E73303A71D3E8A31002D7492 /* TitleScreen.sks in Resources */,
 				E7D42AE11D258242006C85B0 /* Main.storyboard in Resources */,
-				E729E2FB1D415D6C00CFCDB8 /* Snow1.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,25 +338,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E72C249C1D3EED6F00987D34 /* CGFloat+Extensions.swift in Sources */,
-				E729E3021D41813000CFCDB8 /* Scroll.swift in Sources */,
-				E77B76BD1D4C003D0007ED3A /* Numbers.swift in Sources */,
-				E7C324D61D3407C5007B31E4 /* GrapplingHook.swift in Sources */,
-				E7D42ADC1D258242006C85B0 /* GameScene.swift in Sources */,
-				E7227B681D42DBE500147CA3 /* CancelButton.swift in Sources */,
-				E7227B611D42D67500147CA3 /* FinishScreen.swift in Sources */,
-				E73303A91D3E8CEF002D7492 /* MSButtonNode.swift in Sources */,
+				E74F4C381D6CE84E00AD1471 /* TitleScreen.swift in Sources */,
+				E74F4C3F1D6CE86F00AD1471 /* MSButtonNode.swift in Sources */,
+				E74F4C2C1D6CE82300AD1471 /* FacebookButton.swift in Sources */,
+				E74F4C3E1D6CE86F00AD1471 /* CGFloat+Extensions.swift in Sources */,
 				E7D42ADE1D258242006C85B0 /* GameViewController.swift in Sources */,
-				E7227B6C1D42DC7600147CA3 /* TwitterButton.swift in Sources */,
-				E729C0021D35889600F01D59 /* PhysicsCategory.swift in Sources */,
-				E733039F1D3D8D68002D7492 /* GameOverState.swift in Sources */,
+				E74F4C461D6CE88300AD1471 /* GameOverState.swift in Sources */,
+				E74F4C2E1D6CE82300AD1471 /* TwitterButton.swift in Sources */,
+				E74F4C481D6CE88300AD1471 /* ReadyState.swift in Sources */,
+				E74F4C471D6CE88300AD1471 /* PlayingState.swift in Sources */,
+				E74F4C241D6CE80000AD1471 /* Hero.swift in Sources */,
+				E74F4C361D6CE84E00AD1471 /* GameScene.swift in Sources */,
+				E74F4C421D6CE86F00AD1471 /* Scroll.swift in Sources */,
 				E7D42AD81D258242006C85B0 /* AppDelegate.swift in Sources */,
-				E7227B631D42D6C500147CA3 /* RestartButton.swift in Sources */,
-				E733039B1D3D8D5C002D7492 /* PlayingState.swift in Sources */,
-				E7227B6A1D42DC5100147CA3 /* FacebookButton.swift in Sources */,
-				E7D9808E1D27192B004B953B /* Hero.swift in Sources */,
-				E733039D1D3D8D62002D7492 /* ReadyState.swift in Sources */,
-				E73303AC1D3E8D34002D7492 /* TitleScreen.swift in Sources */,
+				E74F4C411D6CE86F00AD1471 /* PhysicsCategory.swift in Sources */,
+				E74F4C231D6CE80000AD1471 /* GrapplingHook.swift in Sources */,
+				E74F4C2D1D6CE82300AD1471 /* RestartButton.swift in Sources */,
+				E74F4C401D6CE86F00AD1471 /* Numbers.swift in Sources */,
+				E74F4C341D6CE84E00AD1471 /* FinishScreen.swift in Sources */,
+				E74F4C2B1D6CE82300AD1471 /* CancelButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
