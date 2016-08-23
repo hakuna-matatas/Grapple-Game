@@ -10,24 +10,63 @@ import GameplayKit
 import SpriteKit
 import FirebaseDatabase
 
-class GameOverState: GKState {    
+class GameOverState: GKState {
     unowned let scene: GameScene
     let gameoverOverlay = FinishScreen()
     
     let userDefaults = NSUserDefaults.standardUserDefaults()
+    var highScoreNode = SKNode()
+    var highScore = 0 {
+        didSet {
+            highScoreNode.removeAllChildren()
+            
+            let highScoreSprite = SKSpriteNode(imageNamed: "High Score")
+            highScoreSprite.anchorPoint.x = 0
+            highScoreNode.addChild(highScoreSprite)
+            
+            let spaceFromFirstNum = highScoreSprite.size.width + 5
+            Numbers.createNumberSprite(&highScoreNode, score: highScore, isMainScore: false, spaceFromFirstNum: spaceFromFirstNum)
+        }
+    }
     
     init(scene: GameScene) {
         self.scene = scene
+        
+        /* Loading high score from previous sessions (if it exists) */
+        if let previousHighScore = userDefaults.valueForKey("HighScore") {
+            self.highScore = previousHighScore as! Int
+        }
+        
+        /* Generates a high score sprite label */
+        if(highScore != 0) {
+            let highScoreSprite = SKSpriteNode(imageNamed: "High Score")
+            highScoreSprite.anchorPoint.x = 0
+            highScoreNode.addChild(highScoreSprite)
+            
+            let spaceFromFirstNum = highScoreSprite.size.width + 5
+            Numbers.createNumberSprite(&highScoreNode, score: highScore, isMainScore: false, spaceFromFirstNum: spaceFromFirstNum)
+        }
     }
     
     override func didEnterWithPreviousState(previousState: GKState?) {
-        scene.physicsWorld.removeAllJoints()
-        scene.hero.physicsBody!.velocity.dx = 0
+        let playingState = previousState as! PlayingState
+        let distanceTravelled = playingState.distanceTravelled
+        let playingStateScoreNode = playingState.scoreNode
         
-        checkForNewHighScore()
+        scene.hero.removeFromParent()
+        scene.grapplingHook.removeFromParent()
+
+        checkForNewHighScore(distanceTravelled)
+
+        var scoreNode = SKNode()
         
-                self.gameoverOverlay.distanceTravelledLabel.text = "Distance: \(scene.distanceTravelledLabel.text!)"
-        scene.distanceTravelledLabel.removeFromParent()
+        Numbers.createNumberSprite(&scoreNode, score: distanceTravelled, isMainScore: true, spaceFromFirstNum: 0)
+        
+        self.gameoverOverlay.addChild(scoreNode)
+        scoreNode.zPosition = 31
+        scoreNode.position.y += 15
+        
+        playingStateScoreNode.removeFromParent()
         
         if(gameoverOverlay.parent == nil) {
             /* Moves the gameoverOverlay onscreen */
@@ -37,29 +76,38 @@ class GameOverState: GKState {
         }
     }
     
-    func checkForNewHighScore() {
-        let newScore = scene.distanceTravelled
+    func checkForNewHighScore(distanceTravelled: Int) {
+        let newScore = distanceTravelled
         
         /* Local Highscore Update */
-        if(newScore > scene.highScore) {
-            self.userDefaults.setValue(scene.distanceTravelled, forKey: "HighScore")
-            self.gameoverOverlay.highScoreLabel.text = "CONGRATS BABE <3"
+        if(newScore > self.highScore) {
+            highScore = newScore
+            self.highScoreNode.removeFromParent()
+            self.userDefaults.setValue(distanceTravelled, forKey: "HighScore")
+            
+            let CONGRATS_MESSAGE = SKSpriteNode(imageNamed: "Congrats Babe")
+            self.gameoverOverlay.addChild(CONGRATS_MESSAGE)
+            CONGRATS_MESSAGE.zPosition = 31
+            CONGRATS_MESSAGE.position.y -= 15
+            pulseColor(CONGRATS_MESSAGE)
         }
         else {
-            self.gameoverOverlay.highScoreLabel.text = "Highscore: \(String(scene.highScore))"
+            self.gameoverOverlay.addChild(highScoreNode)
+            highScoreNode.zPosition = 31
+            highScoreNode.position.y -= 15
+            highScoreNode.position.x -= 85
         }
+    }
+    
+    func pulseColor(sprite: SKSpriteNode) {
+        let pulseCyan = SKAction.sequence([
+                SKAction.colorizeWithColor(UIColor.cyanColor(), colorBlendFactor: 1.0, duration: 0.2),
+                SKAction.waitForDuration(0.1),
+                SKAction.colorizeWithColorBlendFactor(0.0, duration: 0.2)])
         
-        /* Firebase Highscore Update */
-        let FIRRef = FIRDatabase.database().reference()
-        let accRef = FIRRef.child("players").child("testAcc")
-        
-        accRef.child("highScore").observeSingleEventOfType(.Value, withBlock: {(snapshot) in
-            let highScore = snapshot.value as! Int
-            
-            if(newScore > highScore) {
-                accRef.updateChildValues(["highScore" : newScore])
-            }
-        })
+        sprite.runAction(SKAction.repeatActionForever(pulseCyan))
     }
     
 }
+
+

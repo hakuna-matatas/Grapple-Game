@@ -12,6 +12,8 @@ class GrapplingHook: SKShapeNode {
     /* The line that connects hero and grapplingHook */
     var grapplingLine: SKShapeNode = SKShapeNode()
     
+    var isConnected = false
+    
     let GRAPPLING_HOOK_RELEASE_VECTOR = CGVector(dx: 700, dy: 700)
     let GRAPPLING_HOOK_MAX_LENGTH: CGFloat = 300
     
@@ -42,10 +44,11 @@ class GrapplingHook: SKShapeNode {
         createHookGraphic()
         self.position = heroPosition
         self.addChild(grapplingLine)
+        grapplingLine.position = CGPoint(x: -self.frame.width/4, y: self.frame.height/4)
         
         /* Setting up grappling line */
-        grapplingLine.lineWidth = 2
-        grapplingLine.strokeColor = UIColor.darkGrayColor()
+        grapplingLine.lineWidth = 1
+        grapplingLine.strokeColor = UIColor.whiteColor()
         
         /* Used in GameScene.swift's didBeginContact method to determine
          whether the hook has hit something it can attach onto */
@@ -53,10 +56,15 @@ class GrapplingHook: SKShapeNode {
     }
     
     func createHookGraphic() {
-        /* Creates a box */
-        let box = UIBezierPath(roundedRect: CGRect(x: -10, y: -10, width: 20, height: 20), cornerRadius: 3)
-        self.path = box.CGPath
-        self.fillColor = UIColor.clearColor()
+        /* Creates a triangle */
+        let trianglePath = UIBezierPath()
+        trianglePath.moveToPoint(CGPoint(x: 0, y: 0))
+        trianglePath.addLineToPoint(CGPoint(x: -7.07, y: 7.07))
+        trianglePath.addLineToPoint(CGPoint(x: 7.07, y: 14.14))
+        
+        self.path = trianglePath.CGPath
+        self.fillColor = UIColor.whiteColor()
+        self.lineWidth = 0
     }
     
     func initPhysBody() {

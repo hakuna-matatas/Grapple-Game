@@ -9,19 +9,19 @@
 import UIKit
 import SpriteKit
 import FBSDKShareKit
+import Social
 
 class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(GameViewController.shareToFB), name: "showFBSheet", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(GameViewController.shareToFB), name: "shareFB", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(GameViewController.shareToTwitter), name: "shareToTwitter", object: nil)
         
         if let scene = TitleScreen(fileNamed:"TitleScreen") {
             // Configure the view.
             let skView = self.view as! SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
             
             /* Sprite Kit applies additional optimizations to improve rendering performance */
             skView.ignoresSiblingOrder = true
@@ -48,6 +48,14 @@ class GameViewController: UIViewController {
         }
         
         fbDialog.show()
+    }
+    
+    func shareToTwitter() {
+        let tweetVC = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+        tweetVC.setInitialText("Grapple is great")
+        tweetVC.addImage(UIImage(named: "Stationary Penguin"))
+        tweetVC.addURL(NSURL(string: "https://www.google.com/search?q=penguin&source=lnms&tbm=isch&sa=X&ved=0ahUKEwic3ebN55bOAhVI8mMKHfl5Dw8Q_AUICCgB&biw=1280&bih=705#imgrc=mvO8p2N7Lflp1M%3A"))
+        self.presentViewController(tweetVC, animated: false, completion: nil)
     }
 
     override func shouldAutorotate() -> Bool {

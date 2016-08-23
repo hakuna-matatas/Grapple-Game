@@ -14,6 +14,7 @@ class TwitterButton: MSButtonNode {
         self.state = .MSButtonNodeStateActive
         
         self.selectedHandler = {
+            NSNotificationCenter.defaultCenter().postNotificationName("shareToTwitter", object: nil)
         }
     }
     

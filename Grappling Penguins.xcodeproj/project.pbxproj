@@ -14,20 +14,16 @@
 		E7227B6C1D42DC7600147CA3 /* TwitterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7227B6B1D42DC7600147CA3 /* TwitterButton.swift */; };
 		E729C0021D35889600F01D59 /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E729C0011D35889600F01D59 /* PhysicsCategory.swift */; };
 		E729E2FB1D415D6C00CFCDB8 /* Snow1.sks in Resources */ = {isa = PBXBuildFile; fileRef = E729E2F91D415D6C00CFCDB8 /* Snow1.sks */; };
-		E729E2FC1D415D6C00CFCDB8 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = E729E2FA1D415D6C00CFCDB8 /* spark.png */; };
 		E729E2FE1D415DA800CFCDB8 /* Snow2.sks in Resources */ = {isa = PBXBuildFile; fileRef = E729E2FD1D415DA800CFCDB8 /* Snow2.sks */; };
-		E729E3001D4177C000CFCDB8 /* SnowEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E729E2FF1D4177C000CFCDB8 /* SnowEmitter.swift */; };
 		E729E3021D41813000CFCDB8 /* Scroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E729E3011D41813000CFCDB8 /* Scroll.swift */; };
 		E72C249C1D3EED6F00987D34 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72C249B1D3EED6F00987D34 /* CGFloat+Extensions.swift */; };
 		E733039B1D3D8D5C002D7492 /* PlayingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733039A1D3D8D5C002D7492 /* PlayingState.swift */; };
 		E733039D1D3D8D62002D7492 /* ReadyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733039C1D3D8D62002D7492 /* ReadyState.swift */; };
 		E733039F1D3D8D68002D7492 /* GameOverState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E733039E1D3D8D68002D7492 /* GameOverState.swift */; };
-		E73303A21D3E88D3002D7492 /* WinState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73303A11D3E88D3002D7492 /* WinState.swift */; };
 		E73303A71D3E8A31002D7492 /* TitleScreen.sks in Resources */ = {isa = PBXBuildFile; fileRef = E73303A61D3E8A31002D7492 /* TitleScreen.sks */; };
 		E73303A91D3E8CEF002D7492 /* MSButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73303A81D3E8CEF002D7492 /* MSButtonNode.swift */; };
 		E73303AC1D3E8D34002D7492 /* TitleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73303AB1D3E8D34002D7492 /* TitleScreen.swift */; };
-		E7339F381D3D440C0060673B /* Tutorial.sks in Resources */ = {isa = PBXBuildFile; fileRef = E7339F371D3D440C0060673B /* Tutorial.sks */; };
-		E7339F3B1D3D454E0060673B /* LevelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7339F3A1D3D454E0060673B /* LevelNode.swift */; };
+		E77B76BD1D4C003D0007ED3A /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77B76BC1D4C003D0007ED3A /* Numbers.swift */; };
 		E7C324D61D3407C5007B31E4 /* GrapplingHook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C324D51D3407C5007B31E4 /* GrapplingHook.swift */; };
 		E7CEFE051D492A0A0056CD32 /* AGENTORANGE.TTF in Resources */ = {isa = PBXBuildFile; fileRef = E7CEFE041D492A0A0056CD32 /* AGENTORANGE.TTF */; };
 		E7D42AD81D258242006C85B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D42AD71D258242006C85B0 /* AppDelegate.swift */; };
@@ -38,7 +34,6 @@
 		E7D42AE31D258242006C85B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7D42AE21D258242006C85B0 /* Assets.xcassets */; };
 		E7D42AE61D258242006C85B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D42AE41D258242006C85B0 /* LaunchScreen.storyboard */; };
 		E7D9808E1D27192B004B953B /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D9808D1D27192B004B953B /* Hero.swift */; };
-		E7DF307C1D38490D002C2CB6 /* Stars.sks in Resources */ = {isa = PBXBuildFile; fileRef = E7DF307B1D38490D002C2CB6 /* Stars.sks */; };
 		E7E4B7F61D49D92A00949DCC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7E4B7F51D49D92A00949DCC /* GoogleService-Info.plist */; };
 		E7E4B7FA1D49DDD300949DCC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E4B7F71D49DDD300949DCC /* FBSDKCoreKit.framework */; };
 		E7E4B7FB1D49DDD300949DCC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E4B7F81D49DDD300949DCC /* FBSDKLoginKit.framework */; };
@@ -57,20 +52,16 @@
 		E7227B6B1D42DC7600147CA3 /* TwitterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterButton.swift; sourceTree = "<group>"; };
 		E729C0011D35889600F01D59 /* PhysicsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
 		E729E2F91D415D6C00CFCDB8 /* Snow1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow1.sks; sourceTree = "<group>"; };
-		E729E2FA1D415D6C00CFCDB8 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		E729E2FD1D415DA800CFCDB8 /* Snow2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow2.sks; sourceTree = "<group>"; };
-		E729E2FF1D4177C000CFCDB8 /* SnowEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnowEmitter.swift; sourceTree = "<group>"; };
 		E729E3011D41813000CFCDB8 /* Scroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scroll.swift; sourceTree = "<group>"; };
 		E72C249B1D3EED6F00987D34 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
 		E733039A1D3D8D5C002D7492 /* PlayingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingState.swift; sourceTree = "<group>"; };
 		E733039C1D3D8D62002D7492 /* ReadyState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadyState.swift; sourceTree = "<group>"; };
 		E733039E1D3D8D68002D7492 /* GameOverState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverState.swift; sourceTree = "<group>"; };
-		E73303A11D3E88D3002D7492 /* WinState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinState.swift; sourceTree = "<group>"; };
 		E73303A61D3E8A31002D7492 /* TitleScreen.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TitleScreen.sks; sourceTree = "<group>"; };
 		E73303A81D3E8CEF002D7492 /* MSButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MSButtonNode.swift; sourceTree = "<group>"; };
 		E73303AB1D3E8D34002D7492 /* TitleScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleScreen.swift; sourceTree = "<group>"; };
-		E7339F371D3D440C0060673B /* Tutorial.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tutorial.sks; sourceTree = "<group>"; };
-		E7339F3A1D3D454E0060673B /* LevelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelNode.swift; sourceTree = "<group>"; };
+		E77B76BC1D4C003D0007ED3A /* Numbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Numbers.swift; sourceTree = "<group>"; };
 		E7C324D51D3407C5007B31E4 /* GrapplingHook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrapplingHook.swift; sourceTree = "<group>"; };
 		E7CEFE041D492A0A0056CD32 /* AGENTORANGE.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = AGENTORANGE.TTF; sourceTree = "<group>"; };
 		E7D42AD41D258242006C85B0 /* Grappling Penguins.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grappling Penguins.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,7 +74,6 @@
 		E7D42AE51D258242006C85B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7D42AE71D258242006C85B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7D9808D1D27192B004B953B /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
-		E7DF307B1D38490D002C2CB6 /* Stars.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Stars.sks; sourceTree = "<group>"; };
 		E7E4B7F51D49D92A00949DCC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7E4B7F71D49DDD300949DCC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		E7E4B7F81D49DDD300949DCC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -142,7 +132,6 @@
 				E733039C1D3D8D62002D7492 /* ReadyState.swift */,
 				E733039A1D3D8D5C002D7492 /* PlayingState.swift */,
 				E733039E1D3D8D68002D7492 /* GameOverState.swift */,
-				E73303A11D3E88D3002D7492 /* WinState.swift */,
 			);
 			name = "Game States";
 			sourceTree = "<group>";
@@ -165,19 +154,10 @@
 				E73303A81D3E8CEF002D7492 /* MSButtonNode.swift */,
 				E72C249B1D3EED6F00987D34 /* CGFloat+Extensions.swift */,
 				E729C0011D35889600F01D59 /* PhysicsCategory.swift */,
-				E729E2FF1D4177C000CFCDB8 /* SnowEmitter.swift */,
 				E729E3011D41813000CFCDB8 /* Scroll.swift */,
+				E77B76BC1D4C003D0007ED3A /* Numbers.swift */,
 			);
 			name = "Helper Classes";
-			sourceTree = "<group>";
-		};
-		E7339F391D3D44160060673B /* Levels */ = {
-			isa = PBXGroup;
-			children = (
-				E7339F3A1D3D454E0060673B /* LevelNode.swift */,
-				E7339F371D3D440C0060673B /* Tutorial.sks */,
-			);
-			name = Levels;
 			sourceTree = "<group>";
 		};
 		E7339F3E1D3D4B700060673B /* Game Elements */ = {
@@ -185,10 +165,8 @@
 			children = (
 				E7D9808D1D27192B004B953B /* Hero.swift */,
 				E7C324D51D3407C5007B31E4 /* GrapplingHook.swift */,
-				E7DF307B1D38490D002C2CB6 /* Stars.sks */,
 				E729E2F91D415D6C00CFCDB8 /* Snow1.sks */,
 				E729E2FD1D415DA800CFCDB8 /* Snow2.sks */,
-				E729E2FA1D415D6C00CFCDB8 /* spark.png */,
 			);
 			name = "Game Elements";
 			sourceTree = "<group>";
@@ -218,7 +196,6 @@
 				E7D42ADF1D258242006C85B0 /* Main.storyboard */,
 				E73303AA1D3E8CFC002D7492 /* Helper Classes */,
 				E7339F3E1D3D4B700060673B /* Game Elements */,
-				E7339F391D3D44160060673B /* Levels */,
 				E73303A01D3D8D6D002D7492 /* Game States */,
 				E7227B641D42DB6E00147CA3 /* Buttons */,
 				E73303A31D3E89CB002D7492 /* Game Screens */,
@@ -267,7 +244,7 @@
 				TargetAttributes = {
 					E7D42AD31D258242006C85B0 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = CRQLR7R8J3;
+						DevelopmentTeam = J3Q8BP5CE9;
 					};
 				};
 			};
@@ -300,11 +277,8 @@
 				E7D42AE61D258242006C85B0 /* LaunchScreen.storyboard in Resources */,
 				E7D42AE31D258242006C85B0 /* Assets.xcassets in Resources */,
 				E7E4B7F61D49D92A00949DCC /* GoogleService-Info.plist in Resources */,
-				E7DF307C1D38490D002C2CB6 /* Stars.sks in Resources */,
-				E729E2FC1D415D6C00CFCDB8 /* spark.png in Resources */,
 				E73303A71D3E8A31002D7492 /* TitleScreen.sks in Resources */,
 				E7D42AE11D258242006C85B0 /* Main.storyboard in Resources */,
-				E7339F381D3D440C0060673B /* Tutorial.sks in Resources */,
 				E729E2FB1D415D6C00CFCDB8 /* Snow1.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,9 +338,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7339F3B1D3D454E0060673B /* LevelNode.swift in Sources */,
 				E72C249C1D3EED6F00987D34 /* CGFloat+Extensions.swift in Sources */,
 				E729E3021D41813000CFCDB8 /* Scroll.swift in Sources */,
+				E77B76BD1D4C003D0007ED3A /* Numbers.swift in Sources */,
 				E7C324D61D3407C5007B31E4 /* GrapplingHook.swift in Sources */,
 				E7D42ADC1D258242006C85B0 /* GameScene.swift in Sources */,
 				E7227B681D42DBE500147CA3 /* CancelButton.swift in Sources */,
@@ -380,9 +354,7 @@
 				E7227B631D42D6C500147CA3 /* RestartButton.swift in Sources */,
 				E733039B1D3D8D5C002D7492 /* PlayingState.swift in Sources */,
 				E7227B6A1D42DC5100147CA3 /* FacebookButton.swift in Sources */,
-				E73303A21D3E88D3002D7492 /* WinState.swift in Sources */,
 				E7D9808E1D27192B004B953B /* Hero.swift in Sources */,
-				E729E3001D4177C000CFCDB8 /* SnowEmitter.swift in Sources */,
 				E733039D1D3D8D62002D7492 /* ReadyState.swift in Sources */,
 				E73303AC1D3E8D34002D7492 /* TitleScreen.swift in Sources */,
 			);
@@ -500,6 +472,7 @@
 			baseConfigurationReference = 22DE72FFA322CCE96289212B /* Pods-Grappling Penguins.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -511,6 +484,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AlanGao.Grappling-Penguins";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -519,6 +493,7 @@
 			baseConfigurationReference = 457731E89686446143E5A54D /* Pods-Grappling Penguins.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -530,6 +505,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.AlanGao.Grappling-Penguins";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

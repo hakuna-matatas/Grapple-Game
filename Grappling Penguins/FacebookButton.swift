@@ -17,7 +17,7 @@ class FacebookButton: MSButtonNode {
         self.state = .MSButtonNodeStateActive
 
         self.selectedHandler = {
-            NSNotificationCenter.defaultCenter().postNotificationName("showFBSheet", object: nil)
+            NSNotificationCenter.defaultCenter().postNotificationName("shareFB", object: nil)
         }
     }
     

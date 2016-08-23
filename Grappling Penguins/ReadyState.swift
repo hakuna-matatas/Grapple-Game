@@ -13,39 +13,24 @@ class ReadyState: GKState {
     
     unowned let scene: GameScene
     
-    let jumpLabel: SKLabelNode = SKLabelNode()
-    let JUMP_LABEL_POSITION: CGPoint!
-    let hookLabel: SKLabelNode = SKLabelNode()
-    let HOOK_LABEL_POSITION: CGPoint!
+    let instructions: SKSpriteNode!
     
     
     init(scene: GameScene) {
         self.scene = scene
         
-        let QUARTER_SCREEN = scene.size.width/4
-        JUMP_LABEL_POSITION = CGPoint(x: scene.camera!.position.x - QUARTER_SCREEN,
-                                      y: (scene.size.height / 2))
-        HOOK_LABEL_POSITION = CGPoint(x: scene.camera!.position.x + QUARTER_SCREEN,
-                                      y: (scene.size.height / 2))
+        instructions = SKSpriteNode(imageNamed: "Instructions")
+        scene.hero.texture = scene.STATIONARY_TEXTURE
     }
     
     override func didEnterWithPreviousState(previousState: GKState?) {
-        jumpLabel.text = "Jump"
-        jumpLabel.fontSize = 20
-        jumpLabel.fontColor = SKColor.blackColor()
-        jumpLabel.position = JUMP_LABEL_POSITION
-        scene.addChild(jumpLabel)
-        
-        hookLabel.text = "Grappling hook"
-        hookLabel.fontSize = 20
-        hookLabel.fontColor = SKColor.blackColor()
-        hookLabel.position = HOOK_LABEL_POSITION
-        scene.addChild(hookLabel)
+        instructions.position = CGPoint(x: scene.frame.width/2, y: scene.frame.height/2)
+        instructions.zPosition = 10
+        scene.addChild(instructions)
     }
     
     override func willExitWithNextState(nextState: GKState) {
-        jumpLabel.removeFromParent()
-        hookLabel.removeFromParent()
+        instructions.removeFromParent()
     }
     
 }

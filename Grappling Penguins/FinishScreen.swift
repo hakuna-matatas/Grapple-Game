@@ -8,6 +8,7 @@
 
 import SpriteKit
 
+/** This class represents the game over screen that slides down when the player dies */
 class FinishScreen: SKNode {
     var distanceTravelledLabel = SKLabelNode()
     var highScoreLabel = SKLabelNode()
@@ -38,18 +39,6 @@ class FinishScreen: SKNode {
         restartButton.position.x += 175
         restartButton.zPosition = 31
         self.addChild(restartButton)
-        
-        distanceTravelledLabel.fontSize = 30
-        distanceTravelledLabel.fontName = "Agent Orange"
-        distanceTravelledLabel.position = CGPoint(x: -20, y: 5)
-        distanceTravelledLabel.zPosition = 31
-        self.addChild(distanceTravelledLabel)
-        
-        highScoreLabel.fontSize = 15
-        highScoreLabel.fontName = "Agent Orange"
-        highScoreLabel.position = CGPoint(x: -20, y: -25)
-        highScoreLabel.zPosition = 31
-        self.addChild(highScoreLabel)
     }
     
     required init?(coder aDecoder: NSCoder) {
