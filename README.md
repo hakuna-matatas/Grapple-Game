@@ -10,4 +10,7 @@ Note: The app store version is still buggy, so keep a look out for updates!
 ###TODOS
 1. Make a better tutorial
 2. Add ingame currency and shop
-3. Fix bug where the grappling hook sprite shakes when penguin is swinging from it
+
+###BUGS
+1. Grappling hook sprite occasionally shakes when penguin is swinging from it
+2. If the hook is still being shot when the penguin dies, the hook sprite doesn't disappear
