@@ -10,6 +10,8 @@ Note: The app store version is still buggy, so keep a look out for updates!
 ###TODOS
 1. Make a better tutorial
 2. Add ingame currency and shop
+3. Achievement system
+4. Worldwide high scores
 
 ###BUGS
 1. Grappling hook sprite occasionally shakes when penguin is swinging from it
